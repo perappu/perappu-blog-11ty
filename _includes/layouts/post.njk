@@ -1,0 +1,32 @@
+---
+layout: base
+---
+<h1 class="mb-1">
+  {{- title -}}
+</h1>
+
+<hr class="h-px !mt-0.5 !mb-0.5 bg-gray-200 border-0 dark:bg-gray-700"/>
+
+{% if content | toc %}
+  <div class="p-4 border border-gray-200 float-right m-2 ml-4 mt-4 rounded-lg">
+    <b>table of contents</b>
+    <hr class="!m-0 my-4">
+    {{ content | toc | safe }}
+  </div>
+{% endif %}
+
+<div class="!text-slate-400">
+  Last Updated: {{ date | postDate }}<br>
+  {%- if tags -%} 
+  tags:
+    {%- for tag in tags -%}
+      <div class="inline-block mx-1">
+        <a href="/category/{{ tag | slugify }}/">{{ tag }}</a>
+      </div>
+    {%- endfor -%}
+
+  {%- endif -%}
+</div>
+<div class="m-5">
+  {{ content | safe }}
+</div>

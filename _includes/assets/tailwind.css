@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply no-underline;
+  }
+
+  h5 {
+    @apply font-bold text-lg;
+  }
+
+  a {
+    @apply decoration-slate-400;
+    @apply underline;
+  }
+
+  a:hover {
+    @apply decoration-slate-200;
+  }
+
+  ul {
+    @apply mx-5;
+  }
+
+  li {
+    @apply m-0;
+  }
+
+  hr {
+    @apply !border-gray-200 ;
+  }
+
+  table {
+    @apply !w-11/12 !mx-5 !px-5;
+  }
+
+  .prose code::before, .prose code::after {
+    content: "" !important;
+  }
+
+  #topBtn {
+    display: none; /* Hidden by default */
+    cursor: pointer; /* Add a mouse pointer on hover */
+  }
+}

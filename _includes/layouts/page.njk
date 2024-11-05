@@ -1,0 +1,27 @@
+---
+layout: base
+---
+
+<h1 class="mb-1 lowercase">
+    {%- if draft -%}
+        <span class="font-bold text-red-500"> [ DRAFT ] </span>
+    {%- endif -%}
+    {%- if scheduled -%}
+        <span class="font-bold text-yellow-500"> [ Scheduled ] </span>
+    {%- endif -%}
+
+    {{- title -}}
+</h1>
+<hr class="h-px !mt-0 !mb-5 bg-gray-200 border-0 dark:bg-gray-700" />
+
+{% if content | toc %}
+<div class="p-4 border border-gray-200 float-right m-2 rounded-lg">
+<b>table of contents</b>
+<hr class="!m-0 my-4">
+{{ content | toc | safe }}
+</div>
+{% endif %}
+
+<div class="m-5">
+{{ content | safe }}
+</div>
