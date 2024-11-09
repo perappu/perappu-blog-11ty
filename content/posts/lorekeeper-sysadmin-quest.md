@@ -97,29 +97,26 @@ By the way: if you just spun up a container and you're getting a 502 Bad Gateway
 
 Next, you need to set up the access application. This is what does the actual securing — adds the “login” page in front of your website.
 
-First, create a new application here:
+1. First, create a new application here:
 
 ![sysadmin-quest-cloudflare-add-application](/img/sysadmin-quest-cloudflare-add-application.png)
 
-Select "Self-Hosted", then fill out this section for "Configure Application". Everything else can be left as default.
+2. Select "Self-Hosted", then fill out this section for "Configure Application". Everything else can be left as default.
 
 ![picture showing "any name" for application configuration and "your domain" for subdomain](/img/sysadmin-quest-cloudflare-app-config.png)
 
-You'll be presented with the "Add policies" screen. You can name your policy anything you'd like, and then select "Allow". Notably, we'll want to scroll down to "add additional rules".
-
-This is what I consider the most straightforward setup, that isn't reliant on authentication via other websites:
+3. You'll be presented with the "Add policies" screen. You can name your policy anything you'd like, and then select "Allow". Notably, we'll want to scroll down to "add additional rules".<br>
+  This is what I consider the most straightforward setup, that isn't reliant on authentication via other websites:
 
 ![alt text](/img/sysadmin-quest-cloudflare-allow-policy.png)
 
-Create your application, then go back to the Policies tab and select "Add a policy".
-
-We want to create a second policy for our application, set as "Bypass" instead of "Allow". 
-
-Enter in the IP of your website, and any other IPs that your applications may need. (For example, I had a git forge behind a Cloudflare tunnel, and I needed to add GitHub's IPs to bypass the block.)
+4. Create your application, then go back to the Policies tab and select "Add a policy". 
+5. We want to create a second policy for our application, set as "Bypass" instead of "Allow". <br>
+   Enter in the IP of your website, and any other IPs that your applications may need. (For example, I had a git forge behind a Cloudflare tunnel, and I needed to add GitHub's IPs to bypass the block.)
 
 ![alt text](/img/sysadmin-quest-cloudflare-bypass-policy.png)
 
-Finally, we want a third policy for our application. This one will be "Block", and the additional rules will be "Everyone". Like so:
+6. Finally, we want a third policy for our application. This one will be "Block", and the additional rules will be "Everyone". Like so:
 
 ![alt text](/img/sysadmin-quest-cloudflare-block-policy.png)
 
@@ -129,7 +126,7 @@ And now we have to actually find services to connect to the tunnel. So here we g
 
 ### Control Server (Ansible, Rundeck)
 
-The one thing I knew before going into this adventure was that [Ansible](https://www.ansible.com) was probably going to be the solution to a lot of my problems. It's essentially a thing that reads a .yaml file of instructions, and performs those instructions on a remote server.
+The one thing I knew before going into this adventure was that [Ansible](https://www.ansible.com) was probably going to be the solution to a lot of my problems. It's essentially a piece of Python software that reads a .yaml file of instructions, and performs those instructions on a remote server.
 
 I installed Ansible directly onto a droplet and found it... useful, but clunky. Ansible is more or less just a python library to read yaml files. I realized I wanted visuals -- something with a GUI and buttons.
 
