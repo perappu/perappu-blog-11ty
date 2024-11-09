@@ -7,13 +7,22 @@
     @apply no-underline;
   }
 
-  h5 {
-    @apply font-bold text-lg;
+  h2, h3, h4, h5 {
+    border-bottom: 1px solid white;
+    overflow: auto;
+  }
+
+  h4, h5 {
+    @apply px-3 font-bold text-lg;
   }
 
   a {
     @apply decoration-slate-400;
     @apply underline;
+  }
+
+  code {
+    @apply bg-black/25 p-1 rounded-lg;
   }
 
   a:hover {
@@ -38,6 +47,10 @@
 
   .prose code::before, .prose code::after {
     content: "" !important;
+  }
+
+  .prose img {
+    margin: auto;
   }
 
   #topBtn {

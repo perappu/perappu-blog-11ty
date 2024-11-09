@@ -53,7 +53,7 @@ Hereafter, the person purchasing my services is referred to as "you", "commissio
 **This section applies to people whose websites I host via my managed hosting/long-term support services.**
 
 1.  **Hosting payment has a 15 day grace period.** If you do not pay before the 15th of the month, your site will be turned off until paid.
-2.  Hosting payment will be set up as a PayPal. Strip may be used if PayPal errors or is not available in your country.
+2.  Hosting payment will be set up as a PayPal or Stripe subscription.
 3.  You may pay for multiple months in advance. However, I do not offer discounts at this time.
 4.  **Bug fixes, version upgrades, and changes that can be made in 5 minutes or less (typically UI changes) are covered by your monthly charge.** To prevent overworking myself, frequent small changes will incur additional dev time at your discounted $35/hour rate. I'll let you know as soon as we approach that amount -- there will be no surprises.
    - What constitutes as "five minute change" is up to my discretion.

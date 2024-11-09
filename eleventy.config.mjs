@@ -30,7 +30,6 @@ export default async function(eleventyConfig) {
 	  });
 
 	eleventyConfig.addFilter("postDate", (dateObj) => {
-		console.log(dateObj);
 		return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
 	});
 
@@ -39,7 +38,7 @@ export default async function(eleventyConfig) {
 	eleventyConfig.setLibrary("md", markdownit({ html: true }).use(anchor));
 
 	eleventyConfig.addPassthroughCopy({'./_includes/assets/img/**.*' : '/assets/img/'});
-	eleventyConfig.addPassthroughCopy({'./content/img/**/**.*' : '/img/'});
+	eleventyConfig.addPassthroughCopy({'./content/img/**/**.*' : '/img'});
 	eleventyConfig.addPassthroughCopy({ "./_includes/assets/favicon.ico": "/" });
 
 	eleventyConfig.addWatchTarget('./_includes/assets/tailwind.css');
