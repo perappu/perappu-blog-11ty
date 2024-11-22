@@ -3,10 +3,8 @@ title: Commissions
 permalink: /commission/
 ---
  ### Coding Commissions
-I offer personal coding commissions as side work. Please see below for what you&apos;re looking for:
+I offer personal coding commissions for artists and other creators.
 
-- <a href="/commission/lorekeeper">Lorekeeper Commissions</a> (please also view the [Coding Commission Terms of Service](/commission/tos/))
-- Toyhouse Commissions (coming soon)
+For Lorekeeper specific commissions, please click <a href="/commission/lorekeeper">here</a>.
 
- ### Art Commissions
-These are occasionally available on [my Ko-Fi](https://ko-fi.com/stokori).
+Otherwise, please contact me at my email (stokoriel[at]gmail[dot]com).

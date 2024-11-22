@@ -7,7 +7,7 @@ tags: ["lorekeeper", "laravel", "sysadmin"]
 
 ### Introduction
 
-Lorekeeper is a weird project, even barring the whole "what is a closed species masterlist" thing. 
+Lorekeeper is a weird project, even barring the whole "what is a closed species masterlist" thing. In short, it's a platform for artists to create interactive, community games.
 
 It's designed to be as friendly as possible to people who have never hosted a website before, and as I saw someone describe once, "it isn't actually one project, it's one project with a thousand forks and you have to keep downstream in mind at all times".
 
@@ -288,8 +288,8 @@ Some notes:
 
 ### The Deployment Saga
 
-I _tried_ to get Rundeck to work for deployments. I really did. The problem is that the webhooks were unreliable -- I set it up to trigger a webhook on every push to Git, but a lot of the time, it would be slow to kick off and get out of sync with whatever linting, etc was happening via Git Actions.
+I _tried_ to get Rundeck to work for deployments. I really did. The problem is that the webhooks were unreliable -- I set it up to trigger a webhook on every push to Git, but a lot of the time, it would be slow to kick off and get out of sync with whatever linting, etc was happening via Git Actions. I believe Rundeck Enterprise would have solved a lot of my problems, but again, I'm one solo developer on a budget.
 
 In retrospect, I probably could've set up _all_ the CI/CD (continuous integration/continuous deployment) to be through Rundeck, including tests and linting. The problem is that it would've been a completely bespoke solution that I just did not have anymore time left to finagle.
 
-On the other hand, [deployments via Git](https://gist.github.com/itinerare/e869c2524ddf3dccf5cf4bca3047d825) are a problem that has been solved for a long while. It's usually the preferred method for solo developers or other small projects, and for good reason. It's easy to set up, and doesn't tend to break.
+On the other hand, deployments via Git are a problem that has been solved for a long while. It's usually the preferred method for solo developers or other small projects, and for good reason. It's easy to set up, and doesn't tend to break.
