@@ -325,7 +325,7 @@ I'm what they call a ~SQL power user~ (sarcasm) so I typically do not do PHPMyAd
 
 Now we're going to actually put the code on your server!
 
-Run all of these commands, replacing YOURDOMAIN with the URL of your site. You won't receive feedback for all of them -- that's OK, it means it worked! If prompted for a password, enter the password you set up for your account earlier.
+Run all of these commands, replacing YOURDOMAIN with the URL of your site. You won't receive feedback for all of them -- that's OK, it means it worked! If prompted for a password, enter the password you set up for your account earlier. (also, don't replace the `$USER` with anything! Keep it the way it is!)
 
 ```
 sudo mkdir /var/www/YOURDOMAIN
@@ -396,10 +396,10 @@ Open up your git client. I personally use GitKraken, but this will be applicable
 Essentially, we're going to copy our existing connection to the old site, duplicate it, and change the IP address.
 
 My old remote looked like this:
-![alt text](gitkraken_eAVwYd4dR2.png)
+![alt text](/img/gitkraken_eAVwYd4dR2.png)
 
 So my new remote is this:
-![alt text](gitkraken_7xkmuAQy6r.png)
+![alt text](/img/gitkraken_7xkmuAQy6r.png)
 
 **Yours will look different from mine.** That is OK. We copying _exactly_ what you had before, and are **ONLY** changing the IP address. 
 
