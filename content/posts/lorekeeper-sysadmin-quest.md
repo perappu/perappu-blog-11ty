@@ -293,3 +293,15 @@ I _tried_ to get Rundeck to work for deployments. I really did. The problem is t
 In retrospect, I probably could've set up _all_ the CI/CD (continuous integration/continuous deployment) to be through Rundeck, including tests and linting. The problem is that it would've been a completely bespoke solution that I just did not have anymore time left to finagle.
 
 On the other hand, deployments via Git are a problem that has been solved for a long while. It's usually the preferred method for solo developers or other small projects, and for good reason. It's easy to set up, and doesn't tend to break.
+
+...and that's what I would have done, if I hadn't run into endless issues getting self-hosted Forgejo runners to share workflows between repositories. At the time of this writing, there's a bug in the Gitea and Forgejo runners where shared workflows just don't work, and I needed that if I was going to streamline my CI/CD process at all. (Notable, Woodpecker CI does NOT let you execute workflows manually, which was a dealbreaker for me. Also the GitLab guy is a [massive loser who supports fascism](https://archive.is/okSlz#70%) so moving there wasn't a solution either.)
+
+So, for now, all of my CI/CD pipeline is executed in GitHub and uses git hooks for deployment. For my CI/CD, it's just the linting that ships with core Lorekeeper. Every time I push to my website(s), I just do it via the command `git push github main || git push site main`. This pushes/pulls from GitHub first to grab the latest linted code, then pushes to the site.
+
+Could this be better? Sure, I'm sure there's a solution out there _somewhere_ that would solve my needs. Was it worth digging any further past this point? Not really. Once Forgejo/Gitea fix their runners, I'll probably move my CI/CD to be self-hosted, and then I can see about changing my deployment methods from there.
+
+### Conclusion
+
+And that's my entire pipeline! As you can see, it mostly boiled down to figuring out how to shove everything in Rundeck. If you ever want to try a similar multi-Lorekeeper setup and figure out ways to optimize the process, let me know! I'm pretty much chronically in the Lorekeeper discord, so you can always ping me there.
+
+Thanks for reading!
