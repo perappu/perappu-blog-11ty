@@ -3,11 +3,16 @@ title: coding commission terms of service
 permalink: /commission/tos/
 ---
 
-**By purchasing my services you automatically agree to the following terms and conditions. It is your responsibility to be familiar with these terms. They are subject to change at any time.**
+**By purchasing my services you automatically agree to the following terms and conditions, and that they are legally binding. It is your responsibility to be familiar with these terms. They are subject to change at any time.**
 
 Hereafter, the person purchasing my services is referred to as "you", "commissioner", or "the commissioner".
 
 #### Changelog
+- **3/19/2024**
+  - Added terms regarding other developers being subject to code review.
+  - Added a simpler definition for PII.
+  - Added note that these terms are legally binding.
+  - Changed references from DigitalOcean to Hetzner.
 - **11/3/2024**
   - Added terms regarding "ghosting" of commissioner and/or circumstances where the commissioner blocks me.
   - Added clarification regarding:
@@ -24,6 +29,7 @@ Hereafter, the person purchasing my services is referred to as "you", "commissio
 3. I will not use any PII (<a href="https://www.dol.gov/general/ppii">personal identifiable information</a>) for any use other than as required to provide the services requested.
     - PII is defined as such by the US Department of Labor:
       - Any representation of information that permits the identity of an individual to whom the information applies to be reasonably inferred by either direct or indirect means. Further, PII is defined as information: (i) that directly identifies an individual (e.g., name, address, social security number or other identifying number or code, telephone number, email address, etc.) or (ii) by which an agency intends to identify specific individuals in conjunction with other data elements, i.e., indirect identification. (These data elements may include a combination of gender, race, birth date, geographic indicator, and other descriptors). Additionally, information permitting the physical or online contacting of a specific individual is the same as personally identifiable information. This information can be maintained in either paper, electronic or other media.
+      - **This means you can not share any information that can be used to "doxx" someone, such as legal names and addresses.**
 4. In turn, **you may not share my personal identifiable information for any reason**.
 5. The right to use my work is not an endorsement in any way.
 
@@ -40,9 +46,10 @@ Hereafter, the person purchasing my services is referred to as "you", "commissio
 
 1.  I will provide a fair and reasonable timeline for when your work will be completed, and I will provide an advance warning if the expected timeframe changes.
     - **You reserve the right to ask for updates at any time.**
+    - However, continued or frequent requests may result in me cancelling your commission. What constitutes "frequent" is up to my discretion.
 2. For **up to a month, I will happily fix errors caused by my own code**, free of charge. 
     -  Errors caught after that time or errors unrelated to my code can be fixed as an additional charge.
-3. I check my work messages between 4 and 5 PM CST on weekdays, and sporadically on Saturday (typically early in the morning). I typically don't work on Sundays. I'll try to get back to you as soon as possible, but I work 40 hour full-time day job so responses may be delayed. Expect me to get back to you within 1-2 days, excluding vacations or other time off. Please be reasonable -- this is my side job, and I support a family.
+3. I check my work messages between 4 and 5 PM CST on weekdays, and sporadically on Saturday (typically early in the morning). I typically don't work on Sundays. I'll try to get back to you as soon as possible, but I work 40 hour full-time day job so responses may be delayed. Expect me to get back to you within 1-2 days, excluding vacations or other time off. Please be reasonable -- this is my second job, and I support a family.
 4.  Due to my schedule, "working" hour availability (the billable time that I am actively working on your site) may be sporadic. You don't need to be available exactly at the same time I'm working -- however, you must be comfortable with me messaging you status updates regardless of whether or not you are available at that very moment.
 5.  I can not provide assistance with community issues.
 6.  I reserve the right to deny services at any time. 
@@ -52,7 +59,7 @@ Hereafter, the person purchasing my services is referred to as "you", "commissio
 
 **This section applies to people whose websites I host via my managed hosting/long-term support services.**
 
-1.  **Hosting payment has a 15 day grace period.** If you do not pay before the 15th of the month, your site will be turned off until paid.
+1.  **Hosting payment has a 15 day grace period.** If payment is delayed by 15 days, or the subscription is cancelled, your site will be turned off until paid/resumed.
 2.  Hosting payment will be set up as a PayPal or Stripe subscription.
 3.  You may pay for multiple months in advance. However, I do not offer discounts at this time.
 4.  **Bug fixes, version upgrades, and changes that can be made in 5 minutes or less (typically UI changes) are covered by your monthly charge.** To prevent overworking myself, frequent small changes will incur additional dev time at your discounted $35/hour rate. I'll let you know as soon as we approach that amount -- there will be no surprises.
@@ -62,13 +69,15 @@ Hereafter, the person purchasing my services is referred to as "you", "commissio
 6.  **Your website's code will be available via a private GitHub repository at any time.**
 7.  If you have **another coder** for your site, I have no problem working with them! I don't offer any discounts for that, however.
    - **You must put me in contact with the other coder and communicate changes to the site.**
+   - **All code that is not my own is subject to code review.**
 8.  I typically do not provide email accounts, but this can be discussed depending on your needs.
 9.  If you wish to shut down, I will store your database for up to one year, and your data will be stored on GitHub indefinitely.
     - At this time, this does not include images, unless requested.
     - We can discuss your options if you need it stored longer. 
     - Data can be deleted at your request at any time, in compliance with EU law.
-10.  Your website will be stored on a DigitalOcean droplet that is managed by me. Backups are stored on BackBlaze B2 Cloud Storage.
-     - DigitalOcean and Backblaze are responsible for the safekeeping of your data.
+10.  Your website will be stored on a Hetzner droplet that is managed by me. Backups are stored on BackBlaze B2 Cloud Storage.
+     - Hetzner and Backblaze are responsible for the safekeeping of your data.
+     - I am not responsible for outages due to failures in Hetzner or Backblaze's service.
 11.  If you decide to move off of my hosting services, I have no problem helping you migrate. 
      - I do not offer long-term support after you migrate to a different host. 
      - You may hire me for additional one-off developer services at my standard rate.
