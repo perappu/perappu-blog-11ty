@@ -319,7 +319,58 @@ For obvious reasons, I can't show you a full view, but it'll look something like
 
 Next, let's set up PHPMyAdmin!
 
-[this is where I will put the instructions for PHPMyAdmin setup]
+We are going to place PHPMyAdmin behind this thing called an HTTP gateway. This will prompt for an additional authentication any time you visit `sql.yourdomain.com` and very effective against brute force attacks and spam bots.
+
+First, let's generate a hashed version of the password you would like. Enter this with your password of choice:
+
+`openssl passwd`
+
+Enter your password when prompted. It should print out a hashed password, like this. Make note of it!
+![alt text](/img/putty_1jELox59QM.png)
+
+Next, create the authenication file:
+
+`sudo nano /etc/nginx/pma_pass`
+
+Enter the credentials you would like in this format, with the hashed password, all on one single line:
+`username:HASHEDPASSWORD`
+
+For example:
+![alt text](/img/putty_kVu7Sj6WSP.png)
+
+Press `ctrl+x` and then `y` to exit and save. Now, create a new file in the nginx sites_available:
+
+`sudo nano /etc/nginx/sites-available/sql.YOURDOMAIN`
+
+And paste these contents:
+
+```
+server {
+    listen       80;
+    server_name  sql.YOURDOMAIN;
+
+    root /usr/share/phpmyadmin;
+    index index.php;
+
+    location ~ \.php$ {
+        fastcgi_split_path_info ^(.+\.php)(/.*)$;
+        fastcgi_pass unix:/run/php/php8.3-fpm.sock;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+
+        auth_basic "Admin Login";
+        auth_basic_user_file /etc/nginx/pma_pass;
+    }
+
+}
+```
+
+Now, tell nginx where the file is:
+
+`sudo ln -s /etc/nginx/sites-available/mysql.YOURDOMAIN /etc/nginx/sites-enabled/`
+
+And your PHPMyAdmin install should be good to go!
 
 I'm what they call a ~SQL power user~ (sarcasm) so I typically do not do PHPMyAdmin installation. Please ask in the Lorekeeper discord if you're having difficulty with this step -- I'm not very experienced with it!
 
