@@ -321,28 +321,30 @@ Next, let's set up PHPMyAdmin!
 
 We are going to place PHPMyAdmin behind this thing called an HTTP gateway. This will prompt for an additional authentication any time you visit `sql.yourdomain.com` and very effective against brute force attacks and spam bots.
 
-First, let's generate a hashed version of the password you would like. Enter this with your password of choice:
+1. First, let's generate a hashed version of the password you would like. Enter this with your password of choice:
 
 `openssl passwd`
 
-Enter your password when prompted. It should print out a hashed password, like this. Make note of it!
+2. Enter your password when prompted. It should print out a hashed password, like this. Make note of it!
 ![alt text](/img/putty_1jELox59QM.png)
 
-Next, create the authenication file:
+3. Next, create the authentication file:
 
 `sudo nano /etc/nginx/pma_pass`
 
-Enter the credentials you would like in this format, with the hashed password, all on one single line:
+4. Enter the credentials you would like in this format, with the hashed password, all on one single line:
 `username:HASHEDPASSWORD`
 
-For example:
-![alt text](/img/putty_kVu7Sj6WSP.png)
+    For example:
+    ![alt text](/img/putty_kVu7Sj6WSP.png)
 
-Press `ctrl+x` and then `y` to exit and save. Now, create a new file in the nginx sites_available:
+5. Press `ctrl+x` and then `y` to exit and save. 
+
+6. Create a new file in the nginx sites_available:
 
 `sudo nano /etc/nginx/sites-available/sql.YOURDOMAIN`
 
-And paste these contents:
+7. Paste these contents:
 
 ```
 server {
@@ -366,7 +368,9 @@ server {
 }
 ```
 
-Now, tell nginx where the file is:
+5. Press `ctrl+x` and then `y` to exit and save. 
+
+6. Now, tell nginx where the file is:
 
 `sudo ln -s /etc/nginx/sites-available/mysql.YOURDOMAIN /etc/nginx/sites-enabled/`
 
