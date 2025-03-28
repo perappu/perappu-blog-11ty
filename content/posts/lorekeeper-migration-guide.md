@@ -5,6 +5,9 @@ date: 2024-11-02
 tags: ["lorekeeper", "laravel", "sysadmin"]
 ---
 
+### This guide is still a work in progress!
+Follow any of this at your own risk.
+
 ### Introduction
 This is a guide for how to migrate your Lorekeeper website from one provider (such as Dreamhost) to another (such as DigitalOcean or Hetzner).
 
@@ -333,7 +336,7 @@ We are going to place PHPMyAdmin behind this thing called an HTTP gateway. This 
 `sudo nano /etc/nginx/pma_pass`
 
 4. Enter the credentials you would like in this format, with the hashed password, all on one single line:
-`username:HASHEDPASSWORD`
+`USERNAME:HASHEDPASSWORD`
 
     For example:
     ![alt text](/img/putty_kVu7Sj6WSP.png)
@@ -372,7 +375,7 @@ server {
 
 6. Now, tell nginx where the file is:
 
-`sudo ln -s /etc/nginx/sites-available/mysql.YOURDOMAIN /etc/nginx/sites-enabled/`
+`sudo ln -s /etc/nginx/sites-available/sql.YOURDOMAIN /etc/nginx/sites-enabled/`
 
 And your PHPMyAdmin install should be good to go!
 
@@ -458,7 +461,7 @@ My old remote looked like this:
 So my new remote is this:
 ![alt text](/img/gitkraken_7xkmuAQy6r.png)
 
-**Yours will look different from mine.** That is OK. We copying _exactly_ what you had before, and are **ONLY** changing the IP address. 
+**Yours will look different from mine.** That is OK. We copying _exactly_ what you had before, and are **ONLY** changing the IP address/URL. 
 
 **If you previously had your URL there instead (such as geckles.com instead of an IP address), change the URL to the direct IP.**
 
