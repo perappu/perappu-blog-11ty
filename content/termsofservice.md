@@ -90,7 +90,7 @@ Hereafter, the person purchasing my services is referred to as "you", "commissio
 ##### Any questions? Feel free to ask!
 I try to be as transparent as possible and I'm happy to elaborate on anything if desired. I look forward to working with you!
 
-If you have been sent my ToS in response to an inquiry, please sent me the word "birds" to indicate you have read and agree to these terms.
+If you have been sent my ToS in response to an inquiry, please send me the word "birds" to indicate you have read and agree to these terms.
 
 <sub>(thank you to itinerare's <a href="https://www.itinerare.net/commissions/code/tos">ToS</a>, which I based my ToS on!)</sub>
 </div>
