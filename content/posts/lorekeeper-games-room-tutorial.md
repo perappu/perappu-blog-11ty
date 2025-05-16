@@ -10,8 +10,9 @@ tags: ["lorekeeper"]
 A game is comprised of several parts:
 
 - A block with the name in `config\lorekeeper\game_options.php`
-- A blade file in `resources\views\admin\games\data` which embeds into the admin panel for customizing the game data
-- A blade file in `resources\views\games\games` which hosts the game itself and is embedded into `resources\views\games\game.blade.php`
+- A blade file in `resources\views\admin\games\data` which embeds into the admin panel for editing the game data
+- A service in `app\Services\Game` which handles editing game data
+- A blade file in `resources\views\games\games` which hosts the game itself and will be embedded into `resources\views\games\game.blade.php`
 - A directory in `public\gamefiles` which contains the assets and scripts for the game itself
 
 If you're not sure what framework to use for creating your games, I highly recommend [Phaser](https://phaser.io)! It's fast, highly active/supported, and integrates extremely well with some of the systems Games Room has in place.
@@ -47,7 +48,7 @@ submitScoreText.once('pointerup', async function ()
 }, this);
 ```
 
-As an example, you can view this repo where one of Phaser's demo games (a Flappy Bird clone) was adapted to the Games Room extension.
+As an example, you can view [this repo](https://github.com/perappu/lorekeeper/tree/ext-dev/games/flappy) where one of Phaser's demo games (a Flappy Bird clone) was adapted to the Games Room extension.
 
 ### Preparing the Game for Release
 
