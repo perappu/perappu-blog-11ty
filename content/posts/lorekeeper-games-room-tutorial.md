@@ -56,7 +56,9 @@ Vanilla JS/JQuery or something like Phaser will not run into an issue with reque
 
 If you are using something like Godot or Unity, you may run into issues. There are several ways to circumvent this. You can exclude the route from CSRF -- however, I don't recommend that, as it helps prevent people from sending spoofed scores (though does not prevent it entirely).
 
-The cleaner way to go about it is to add a simple get request route that returns the CSRF. See this [StackExchange](https://gamedev.stackexchange.com/questions/202667/create-token-in-unity-to-send-post-request-to-laravel-controller) answer. This may be something I add to Games Room in the future.
+The cleaner way to go about it is to add a simple get request route that returns the CSRF. Games Room has one built in (a GET request to the authenticated `/games/score` route) that follows the method for this [StackExchange](https://gamedev.stackexchange.com/questions/202667/create-token-in-unity-to-send-post-request-to-laravel-controller) answer, though you'll have to find some way to handle detecting the authenticated user yourself.
+
+Further support for additional methods of score submission is something I plan to add in the future. Please let me know if you have a pressing need for it, and I'll be happy to prioritize. :D
 
 ### Preparing the Game for Release
 
