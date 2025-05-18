@@ -62,7 +62,7 @@ submitScoreText.once('pointerup', async function ()
 }, this);
 ```
 
-As an example, you can view (this repo)[https://github.com/perappu/lorekeeper/tree/ext-dev/games/flappy] where one of Phaser's demo games (a Flappy Bird clone) was adapted to the Games Room extension.
+As an example, you can view [this repo](https://github.com/perappu/lorekeeper/tree/ext-dev/games/flappy) where one of Phaser's demo games (a Flappy Bird clone) was adapted to the Games Room extension.
 
 ### Handling the CSRF Token
 
