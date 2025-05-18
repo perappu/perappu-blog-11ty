@@ -62,11 +62,11 @@ submitScoreText.once('pointerup', async function ()
 }, this);
 ```
 
-As an example, you can view [this repo](https://github.com/perappu/lorekeeper/tree/ext-dev/games/flappy) where one of Phaser's demo games (a Flappy Bird clone) was adapted to the Games Room extension.
+As an example, you can view (this repo)[https://github.com/perappu/lorekeeper/tree/ext-dev/games/flappy] where one of Phaser's demo games (a Flappy Bird clone) was adapted to the Games Room extension.
 
 ### Handling the CSRF Token
 
-Vanilla JS/JQuery or something like Phaser will not run into an issue with requesting a CSRF token, because you can leverage the functions built into game.blade.php, or otherwise use `{{ csrf_token() }}` to send the `X-CSRF-Token` header with your POST request.
+Vanilla JS/JQuery or something like Phaser will not run into an issue with requesting a CSRF token, because you can leverage the functions built into game.blade.php, or otherwise use `csrf_token()` to send the `X-CSRF-Token` header with your POST request.
 
 If you are using something like Godot or Unity, you may run into issues. There are several ways to circumvent this. You can exclude the route from CSRF -- however, I don't recommend that, as it helps prevent people from sending spoofed scores (though does not prevent it entirely).
 
