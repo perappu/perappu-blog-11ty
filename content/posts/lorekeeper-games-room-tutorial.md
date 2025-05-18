@@ -5,6 +5,20 @@ date: 2025-05-15
 tags: ["lorekeeper"]
 ---
 
+### Extension Overview
+
+There are two types of games that can be added -- "Link" which simply adds a link to another page (such as if you wanted to list something like Higher or Lower in your games room) and "Game" which is a full-fledged game that allows utilization of the score submission features.
+
+Steps to follow for installing a game:
+1. Merge in the core games room extension
+2. Merge in game you wish to install
+3. In the Admin Panel, go to Data -> Games and create a new game.
+4. Select the "Game" type and click save.
+5. Scroll down to the bottom and select the game you have installed from the dropdown, then click save.
+6. Configure the game within the presented form.
+
+You can only have ONE copy of a game installed at a time, as all versions will share the same files.
+
 ### Basic Format
 
 A game is comprised of several parts:
