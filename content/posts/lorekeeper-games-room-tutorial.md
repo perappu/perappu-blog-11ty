@@ -33,7 +33,7 @@ If you're not sure what framework to use for creating your games, I highly recom
 
 ### Handling Score Submission
 
-By default, `resources\views\games\game.blade.php` includes three async methods as constants: `submitScore(score)`, `canSubmit()`, and `chargeCurrency(currencyID, amount)`.
+By default, `resources\views\games\game.blade.php` includes three async functions as constants: `submitScore(score)`, `canSubmit()`, and `chargeCurrency(currencyID, amount)`.
 
 You don't have to use these, but they are provided for convenience, as calling them will include the necessary CSRF token and PHP variables passed to the page.
 
@@ -68,11 +68,9 @@ As an example, you can view [this repo](https://github.com/perappu/lorekeeper/tr
 
 Vanilla JS/JQuery or something like Phaser will not run into an issue with requesting a CSRF token, because you can leverage the functions built into game.blade.php, or otherwise use `csrf_token()` to send the `X-CSRF-Token` header with your POST request.
 
-If you are using something like Godot or Unity, you may run into issues. There are several ways to circumvent this. You can exclude the route from CSRF -- however, I don't recommend that, as it helps prevent people from sending spoofed scores (though does not prevent it entirely).
+If you are using something like Godot or Unity, you may run into issues. There are several ways to circumvent this. Godot allows you to [bridge to Javascript](https://docs.godotengine.org/en/stable/tutorials/platform/web/javascript_bridge.html) so you can call the `submitScore()` function from there. Unity will likely require the use of API routes, as to my understanding it can't interface with the JS on the webpage.
 
-The cleaner way to go about it is to add a simple get request route that returns the CSRF. Games Room has one built in (a GET request to the authenticated `/games/score` route) that follows the method for this [StackExchange](https://gamedev.stackexchange.com/questions/202667/create-token-in-unity-to-send-post-request-to-laravel-controller) answer, though you'll have to find some way to handle detecting the authenticated user yourself.
-
-Further support for additional methods of score submission is something I plan to add in the future. Please let me know if you have a pressing need for it, and I'll be happy to prioritize. :D
+API routes are debatably out of scope for this extension. You have a lot of options for pure HTML5/JS games -- but if API support is desired for things like Unity, then please let me know.
 
 ### Preparing the Game for Release
 
