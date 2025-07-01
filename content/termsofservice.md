@@ -8,7 +8,9 @@ permalink: /commission/tos/
 Hereafter, the person purchasing my services is referred to as "you", "commissioner", or "the commissioner".
 
 #### Changelog
-- **3/19/2024**
+- **7/1/2025**
+  - Added terms that I reserve the right to turn down any attempt to access the code, without explanation.
+- **3/19/2025**
   - Added terms regarding other developers being subject to code review.
   - Added a simpler definition for PII.
   - Added note that these terms are legally binding.
@@ -70,6 +72,7 @@ Hereafter, the person purchasing my services is referred to as "you", "commissio
 7.  If you have **another coder** for your site, I have no problem working with them! I don't offer any discounts for that, however.
    - **You must put me in contact with the other coder and communicate changes to the site.**
    - **All code that is not my own is subject to code review.**
+   - **I reserve the right to say no to any third party wanting access to the code, without explanation.**
 8.  I typically do not provide email accounts, but this can be discussed depending on your needs.
 9.  If you wish to shut down, I will store your database for up to one year, and your data will be stored on GitHub indefinitely.
     - At this time, this does not include images, unless requested.
