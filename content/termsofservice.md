@@ -9,7 +9,7 @@ Hereafter, the person purchasing my services is referred to as "you", "commissio
 
 #### Changelog
 - **7/1/2025**
-  - Added terms that I reserve the right to turn down any attempt to access the code, without explanation.
+  - Added terms that I reserve the right to turn down any third party attempt to access the code, without explanation.
 - **3/19/2025**
   - Added terms regarding other developers being subject to code review.
   - Added a simpler definition for PII.
