@@ -1,21 +1,40 @@
-<nav class="flex text-center mr-auto p-3 bg-bottom border-b-2 border-slate-200">
-    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-        <div class="lg:flex-grow">
-            <a href="/" class="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">
-                            Home
-                        </a>
-            <a href="/posts" class="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">
-                            Posts
-                        </a>
-            <a href="/projects" class="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">
-                            Projects
-                        </a>
-            <a href="/commission" class="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">
-                            Commission
-                        </a>
-            <a href="/about" class="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">
-                            About
-                        </a>
-        </div>
+<div
+  class="bg-gray-800 text-white xs:flex-col sm:flex p-2 font-bold border-b-2"
+  x-data="{
+    showDropdown:false,
+    init() {
+      window
+        .matchMedia('(min-width: 640px)')
+        .addEventListener('change', ({ matches }) => {
+          if (matches) {
+            $data.showDropdown = false;
+          } else {
+            $data.showDropdown = true;
+        }
+        })
+    }
+  }">
+    <a class="hover:text-cyan-300 md:block lg:hidden" href="#" @click="showDropdown = !showDropdown" @click.outside="showDropdown = false">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8 border rounded">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+      </svg>
+    </a>
+  <!-- Horizontal Nav Links -->
+  <div class="flex flex-col flex-auto lg:!flex lg:flex-row" x-show="showDropdown">
+    <div class="flex flex-auto lg:items-center lg:text-center  p-2">
+      <a class="w-full" href="/">Home</a>
     </div>
-</nav>
+    <div class="flex flex-auto lg:items-center lg:text-center  p-2">
+      <a class="w-full" href="/posts">Posts</a>
+    </div>
+    <div class="flex flex-auto lg:items-center lg:text-center  p-2">
+      <a class="w-full" href="/projects">Projects</a>
+    </div>
+    <div class="flex flex-auto lg:items-center lg:text-center  p-2">
+      <a class="w-full" href="/commission">Commission</a>
+    </div>
+    <div class="flex flex-auto lg:items-center lg:text-center  p-2">
+      <a class="w-full" href="/about">About</a>
+    </div>
+  </div>
+</div>
