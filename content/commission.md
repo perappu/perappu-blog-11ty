@@ -9,6 +9,10 @@ I work at a straightforward $40/hour and will give a quote based on your needs. 
 
 I provide shared hosting services + support at an inexpensive rate, or I can work with your hosting provider of choice.
 
-Please contact me at my email (stokoriel[at]gmail[dot]com)!
+Please contact me at my email (stokoriel[at]gmail[dot]com) or via Discord (stokori)!
 
 For Lorekeeper specific commissions, please click <a href="/commission/lorekeeper">here</a>.
+
+ ### Art Commissions
+
+ I occasionally open for "surprise me" style art commissions on my <a href="https://ko-fi.com/stokori/commissions">Ko-Fi</a>.
