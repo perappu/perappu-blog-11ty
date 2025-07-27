@@ -15,7 +15,7 @@ layout: base
 <hr class="h-px !mt-0 !mb-5 bg-gray-200 border-0 dark:bg-gray-700" />
 
 {% if content | toc %}
-<div class="p-4 border border-gray-200 float-right m-4 rounded-lg">
+<div class="p-4 border border-gray-200 float-right m-4 rounded-lg hidden md:inline-block">
 <b>table of contents</b>
 <hr class="!m-0 my-4">
 {{ content | toc | safe }}
