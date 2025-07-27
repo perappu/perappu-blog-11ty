@@ -15,4 +15,4 @@ For Lorekeeper specific commissions, please click <a href="/commission/lorekeepe
 
  ### Art Commissions
 
- I occasionally open for "surprise me" style art commissions on my <a href="https://ko-fi.com/stokori/commissions">Ko-Fi</a>.
+ I occasionally open for "surprise me" (also known as "Skeb-style") style art commissions on my <a href="https://ko-fi.com/stokori/commissions">Ko-Fi</a>.
