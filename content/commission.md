@@ -1,6 +1,6 @@
 ---
 title: Commissions
-permalink: /commission/
+permalink: /commission/index.html
 ---
  ### Coding Commissions
 I offer personal website coding commissions for artists, writers, and other creatives! I am open to work with all kinds of creators, including artists/writers of adult content. <a href="https://perabyte.dev">Here is the main website for my coding/creative business, Perabyte.</a>

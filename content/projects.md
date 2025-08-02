@@ -1,6 +1,6 @@
 ---
 title: Projects
-permalink: /projects/
+permalink: /projects/index.html
 ---
 
 ### F2U/FOSS Coding

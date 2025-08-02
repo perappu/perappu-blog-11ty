@@ -1,6 +1,6 @@
 ---
 title: "About"
-permalink: /about/
+permalink: /about/index.html
 ---
 
 **Hi there!** I'm Kaz, but you may see people use other names too. 

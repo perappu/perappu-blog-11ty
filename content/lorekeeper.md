@@ -1,6 +1,6 @@
 ---
 title: Lorekeeper Commissions
-permalink: /commission/lorekeeper/
+permalink: /commission/lorekeeper/index.html
 ---
 
 Thank you for considering me for your developer work! ❤️ I'd love to work with you. Read below for more information!

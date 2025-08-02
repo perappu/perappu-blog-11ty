@@ -1,6 +1,6 @@
 ---
 title: art terms of service
-permalink: /commission/art/
+permalink: /commission/art/index.html
 ---
 
 **By purchasing my services you automatically agree to the following terms and conditions. It is your responsibility to be familiar with these terms. They are subject to change at any time.**
