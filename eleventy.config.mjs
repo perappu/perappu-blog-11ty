@@ -17,7 +17,7 @@ export default async function (eleventyConfig) {
 		postCss([tailwind(import('./tailwind.config')), autoprefixer(), cssnano({ preset: 'default' })])
 			.process(cssCode, {
 				// path to our CSS file
-				from: './src/_includes/assets/tailwind.css'
+				from: './assets/tailwind.css'
 			})
 			.then(
 				(r) => done(null, r.css),
@@ -45,13 +45,10 @@ export default async function (eleventyConfig) {
 
 	eleventyConfig.setInputDirectory("_src");
 
-	eleventyConfig.addPassthroughCopy({ './_src/_includes/assets/content/img/**.*': '/assets/content/img/' });
 	eleventyConfig.addPassthroughCopy({ './_src/content/content/img/**/**.*': '/content/img/' });
-	eleventyConfig.addPassthroughCopy({ "./_src/_includes/assets/img/favicon.ico": "/" });
-	eleventyConfig.addPassthroughCopy({ "./_src/_includes/assets/fslightbox.js": "/" });
-	eleventyConfig.addPassthroughCopy({ "./_src/_includes/assets/img/**.*": "/assets/img/" });
+	eleventyConfig.addPassthroughCopy({ "./assets/**/**.*": "/" });
 
-	eleventyConfig.addWatchTarget('/_includes/assets/tailwind.css');
+	eleventyConfig.addWatchTarget('/assets/tailwind.css');
 	eleventyConfig.addWatchTarget('/content/**/*.*');
 
 	eleventyConfig.addNunjucksAsyncFilter('postcss', postcssFilter);
