@@ -18,7 +18,7 @@ const textShadow = () => (function({ matchUtilities, theme }) {
   })
 
 export default {
-	content: ['./_site/**/*.html', './_includes/layouts/*.{md,html,njk}', './content/**/*.{md,html,njk}'],
+	content: ['./_site/**/*.html', './_src/_includes/layouts/*.{md,html,njk}', './_src/content/**/*.{md,html,njk}'],
 	theme: {
 		extend: {
 		  backgroundImage: {

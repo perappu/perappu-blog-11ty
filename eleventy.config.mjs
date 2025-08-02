@@ -26,7 +26,7 @@ export default async function (eleventyConfig) {
 	};
 
 	eleventyConfig.addCollection("posts", function (collectionApi) {
-		return collectionApi.getFilteredByGlob("content/posts/*.md")
+		return collectionApi.getFilteredByGlob("_src/content/posts/*.md")
 			.sort((a, b) => b.data.date - a.data.date);;
 	});
 
@@ -45,10 +45,11 @@ export default async function (eleventyConfig) {
 
 	eleventyConfig.setInputDirectory("_src");
 
-	eleventyConfig.addPassthroughCopy({ './_includes/assets/content/img/**.*': '/assets/content/img/' });
-	eleventyConfig.addPassthroughCopy({ './content/content/img/**/**.*': '/content/img/' });
-	eleventyConfig.addPassthroughCopy({ "./_includes/assets/favicon.ico": "/" });
-	eleventyConfig.addPassthroughCopy({ "./_includes/assets/fslightbox.js": "/" });
+	eleventyConfig.addPassthroughCopy({ './_src/_includes/assets/content/img/**.*': '/assets/content/img/' });
+	eleventyConfig.addPassthroughCopy({ './_src/content/content/img/**/**.*': '/content/img/' });
+	eleventyConfig.addPassthroughCopy({ "./_src/_includes/assets/img/favicon.ico": "/" });
+	eleventyConfig.addPassthroughCopy({ "./_src/_includes/assets/fslightbox.js": "/" });
+	eleventyConfig.addPassthroughCopy({ "./_src/_includes/assets/img/**.*": "/assets/img/" });
 
 	eleventyConfig.addWatchTarget('/_includes/assets/tailwind.css');
 	eleventyConfig.addWatchTarget('/content/**/*.*');
