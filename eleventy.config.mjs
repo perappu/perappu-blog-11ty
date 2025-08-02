@@ -47,7 +47,7 @@ export default async function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy({ './_includes/assets/content/img/**.*': '/assets/content/img/' });
 	eleventyConfig.addPassthroughCopy({ './content/content/img/**/**.*': '/content/img/' });
 	eleventyConfig.addPassthroughCopy({ "./_includes/assets/favicon.ico": "/" });
-	eleventyConfig.addPassthroughCopy({ "./_includes/assets/fslightbox.js": "/assets/" });
+	eleventyConfig.addPassthroughCopy({ "./_includes/assets/fslightbox.js": "/" });
 
 	eleventyConfig.addWatchTarget('./_includes/assets/tailwind.css');
 	eleventyConfig.addWatchTarget('./content/**/*.*');
