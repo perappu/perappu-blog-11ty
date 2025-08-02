@@ -32,7 +32,7 @@ Initial dev work is **$40/hour**, which will be tracked via an external time-tra
 I try to be extremely fair with what counts as billable time. I will send you messages periodically throughout the development process, so you are aware exactly when and what I'm working on! I can explain as much or as little of the process as you'd like.
 
 **Hosting starts at $30/month.** This gets you this plan offered by Hetzner, which is both faster and more reliable than Dreamhost's basic plan:
-![VCPUs 2, RAM 2GB, 40GB SSD, traffic 1 TB](/img/hetznerplan.png)
+![VCPUs 2, RAM 2GB, 40GB SSD, traffic 1 TB](/content/img/hetznerplan.png)
 
 If you wish for a faster server, the cost per month will go up accordingly. You're free to pay for several months in advance.
 

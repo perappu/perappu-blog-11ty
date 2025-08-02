@@ -87,7 +87,7 @@ TUNNEL_TOKEN=whatevercloudflaregaveyou
 
 For some reason Cloudflare won't just give you the stupid token, so you'll have to copy this and then wrangle the token out of it:
 
-![screenshot of cloudflare docker copy paste](/img/sysadmin-quest-cloudflare-token.png)
+![screenshot of cloudflare docker copy paste](/content/img/sysadmin-quest-cloudflare-token.png)
 
 Basically we only serve the app "locally" on the docker network, so it's only accessible within the docker network. The Cloudflare tunnel then exposes that stuff to the greater internet, and the Cloudflare access group. You did it correctly if you go to `[your IP]:[your port]` and the connection times out, but you can still access it via the URL defined in the Cloudflare tunnel.
 
@@ -99,26 +99,26 @@ Next, you need to set up the access application. This is what does the actual se
 
 1. First, create a new application here:
 
-![sysadmin-quest-cloudflare-add-application](/img/sysadmin-quest-cloudflare-add-application.png)
+![sysadmin-quest-cloudflare-add-application](/content/img/sysadmin-quest-cloudflare-add-application.png)
 
 2. Select "Self-Hosted", then fill out this section for "Configure Application". Everything else can be left as default.
 
-![picture showing "any name" for application configuration and "your domain" for subdomain](/img/sysadmin-quest-cloudflare-app-config.png)
+![picture showing "any name" for application configuration and "your domain" for subdomain](/content/img/sysadmin-quest-cloudflare-app-config.png)
 
 3. You'll be presented with the "Add policies" screen. You can name your policy anything you'd like, and then select "Allow". Notably, we'll want to scroll down to "add additional rules".<br>
   This is what I consider the most straightforward setup, that isn't reliant on authentication via other websites:
 
-![alt text](/img/sysadmin-quest-cloudflare-allow-policy.png)
+![alt text](/content/img/sysadmin-quest-cloudflare-allow-policy.png)
 
 4. Create your application, then go back to the Policies tab and select "Add a policy". 
 5. We want to create a second policy for our application, set as "Bypass" instead of "Allow". <br>
    Enter in the IP of your website, and any other IPs that your applications may need. (For example, I had a git forge behind a Cloudflare tunnel, and I needed to add GitHub's IPs to bypass the block.)
 
-![alt text](/img/sysadmin-quest-cloudflare-bypass-policy.png)
+![alt text](/content/img/sysadmin-quest-cloudflare-bypass-policy.png)
 
 6. Finally, we want a third policy for our application. This one will be "Block", and the additional rules will be "Everyone". Like so:
 
-![alt text](/img/sysadmin-quest-cloudflare-block-policy.png)
+![alt text](/content/img/sysadmin-quest-cloudflare-block-policy.png)
 
 This policy will allow you to log in, your server IPs to bypass the tunnel, and block everyone else from accessing your site!
 
@@ -158,7 +158,7 @@ You can make a 10 GB BackBlaze B2 account for free. It's also the place I'd reco
 
 This is what my config looked like:
 
-![config for s3 model source](/img/sysadmin-quest-model-source.png)
+![config for s3 model source](/content/img/sysadmin-quest-model-source.png)
 
 And this is an example configuration for a given node in .yaml format:
 
@@ -188,7 +188,7 @@ No matter which option you go with, you will upload the SSH key and password int
 
 After adding a node (or two), go to the "Command" section on the right hand side. Type in `name: [NAME OF YOUR NODE]` for the node search and type in `whoami` for the command. If everything went well, you should see it respond back with the Rundeck account's username!
 
-![rundeck showing a successful response to the whoami command](/img/sysadmin-quest-rundeck-whoami.png)
+![rundeck showing a successful response to the whoami command](/content/img/sysadmin-quest-rundeck-whoami.png)
 
 **As of this writing, __there is a major glitch with the current version of Rundeck__.** You can not execute sudo commands via bash without passwordless sudo. ___Do not set up passwordless sudo unless you know what you're doing.___ There are other workarounds, but they are highly technical. In the interim, you can use Ansible jobs to run sudo commands.
 
@@ -196,7 +196,7 @@ After adding a node (or two), go to the "Command" section on the right hand side
 
 "Jobs" are pre-defined scripts you can run on one or more nodes. To give a sense for what a job does, here's a screenshot of all of my current jobs:
 
-![a screenshot showing all my rundeck jobs](/img/sysadmin-quest-rundeck-jobs.png)
+![a screenshot showing all my rundeck jobs](/content/img/sysadmin-quest-rundeck-jobs.png)
 
 **I'll walk you through one of them -- "Maintenance - Server Updates" -- to give a sense for how they work.** We'll go tab by tab.
 
@@ -204,14 +204,14 @@ After adding a node (or two), go to the "Command" section on the right hand side
 
 2. **Open the third tab, "Nodes".** This is where you will define which nodes the job is allowed to run on. We want this to be runnable on all nodes, so go ahead and put in `.*` to indicate you want all nodes. You can leave everything else as default.
 
-![rundeck nodes tab](/img/sysadmin-quest-rundeck-nodes-tab.png)
+![rundeck nodes tab](/content/img/sysadmin-quest-rundeck-nodes-tab.png)
 
 3. **Open the second tab, "Workflow".** This is where you write your script.<br>
   We don't need to input any options for this script, so you can skip the "Options" section. If you want to define user input, you do that from the "Options" section. For example, on my database backup script, I allow the user to define the name of the database they want to back up.
 
 4. Within the second tab, **scroll down to "Workflow" and click "Add a Step"**. We will want to add a "Inline Ansible Playbook".
 
-![inline ansible playbook](/img/sysadmin-quest-ansible-playbook.png)
+![inline ansible playbook](/content/img/sysadmin-quest-ansible-playbook.png)
 
 5. Now to write our steps:
    1. For the "Ansible binaries directory path", enter `/usr/bin`. The installation of Ansible was covered by the Dockerfile I linked previously.
