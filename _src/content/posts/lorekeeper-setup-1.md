@@ -19,7 +19,7 @@ This is a guide on how to setup a copy of Lorekeeper on your local computer. Thi
 
 1. Download [XAMPP](https://www.apachefriends.org/download.html). You want the version that is **PHP 8.2.**
 
-[<img src="/content/img/perabyte-setup/perabyte-setup-xampp.png" alt="download xampp">](/img/perabyte-setup-xampp.png){data-fslightbox="gallery" data-type="image"}
+[<img src="/content/img/perabyte-setup/perabyte-setup-xampp.png" alt="download xampp">](/img/perabyte-setup-xampp.png){data-fslightbox data-type="image"}
 
 2. Run the XAMPP .exe file. **If you see this warning, as long as you follow this guide, you can ignore it.**
 
@@ -479,7 +479,7 @@ MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
 13. Next run `php artisan copy-default-images`. This will add the default images for various features on LK:
 
-![alt text](/content/img/perabyte-setup/running-lk-12.png)
+![alt text](/content/img/perabyte-setup/Code_elgj6mSNzn.png)
 
 14. Finally, we will run the command `php artisan setup-admin-user`. This will create user #1, the default admin account. The email and details you give it do not need to be real, but make them something you'll remember easily.
 
