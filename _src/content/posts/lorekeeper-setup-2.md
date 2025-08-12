@@ -167,8 +167,6 @@ If you bought your domain name through something like Namecheap, you'll have a l
 
 [<img src="/content/img/perabyte-setup/setting-up-ssh-19.png" alt="alt text">](/content/img/perabyte-setup/setting-up-ssh-19.png){data-fslightbox data-type="image"}
 
-![alt text](image-19.png)
-
 16. Click "Default Settings", then click "Save".
 
 [<img src="/content/img/perabyte-setup/setting-up-ssh-20.png" alt="alt text">](/content/img/perabyte-setup/setting-up-ssh-20.png){data-fslightbox data-type="image"}
