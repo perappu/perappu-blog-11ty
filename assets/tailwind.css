@@ -51,11 +51,16 @@
 
   .prose img {
     margin: auto;
-  }
-
-  img {
     max-height: 250px;
     width: auto;
+  }
+
+  .prose blockquote {
+    font-weight: initial;
+    font-style: normal;
+    quotes: "" "" "" "";
+    border-color: white;
+    color: var(--tw-prose-body);
   }
 
   #topBtn {
