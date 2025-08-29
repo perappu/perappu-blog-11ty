@@ -53,6 +53,8 @@ If you have an existing LK site and would like to transfer to my services, I'm h
 ### General Work
 I can also help with general dev work at my standard $40/hour charge. This can include adding extensions, updating your site, etc.
 
+**All dev work is rounded up to the nearest hour.**
+
 Depending on your idea, I can help with creation of custom extensions/features. Let me know what your idea is and we'll go from there!
 
 ---
