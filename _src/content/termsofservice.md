@@ -8,6 +8,9 @@ permalink: /commission/tos/index.html
 Hereafter, the person purchasing my services is referred to as "you", "commissioner", or "the commissioner".
 
 #### Changelog
+- **8/29/2025**
+  - Updated daily availability from 4-5 PM to 9 AM-5 PM.
+  - Added terms regarding minimum payment.
 - **7/1/2025**
   - Added terms that I reserve the right to turn down any third party attempt to access the code, without explanation.
 - **3/19/2025**
@@ -51,11 +54,12 @@ Hereafter, the person purchasing my services is referred to as "you", "commissio
     - However, continued or frequent requests may result in me cancelling your commission. What constitutes "frequent" is up to my discretion.
 2. For **up to a month, I will happily fix errors caused by my own code**, free of charge. 
     -  Errors caught after that time or errors unrelated to my code can be fixed as an additional charge.
-3. I check my work messages between 4 and 5 PM CST on weekdays, and sporadically on Saturday (typically early in the morning). I typically don't work on Sundays. I'll try to get back to you as soon as possible, but I work 40 hour full-time day job so responses may be delayed. Expect me to get back to you within 1-2 days, excluding vacations or other time off. Please be reasonable -- this is my second job, and I support a family.
+3. I check my work messages between 10 AM and 5 PM CST on weekdays, and sporadically on Saturday (typically early in the morning). I don't work on Sundays. I'll try to get back to you as soon as possible, but depending on circumstances, responses may be delayed. Expect me to get back to you within 1-2 days, excluding vacations or other time off. Please be reasonable, as I am a solo developer.
 4.  Due to my schedule, "working" hour availability (the billable time that I am actively working on your site) may be sporadic. You don't need to be available exactly at the same time I'm working -- however, you must be comfortable with me messaging you status updates regardless of whether or not you are available at that very moment.
 5.  I can not provide assistance with community issues.
 6.  I reserve the right to deny services at any time. 
     - If money has been exchanged, you will be refunded for any work not performed.
+7. All hourly work is rounded up to the nearest hour. This means $35 minimum for hosting clients, and $40 minimum for all others.
 
 #### 4. Hosting Details
 
