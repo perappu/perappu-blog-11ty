@@ -31,7 +31,6 @@ sudo timedatectl set-ntp no
 # Verify output of below command shows 'NTP service: inactive'
 timedatectl
 
-# If you haven't already
 sudo apt install ntp
 
 # Verify it works
