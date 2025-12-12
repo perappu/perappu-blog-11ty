@@ -88,7 +88,7 @@ Here are some examples that may be relevant to you:
 *   [**CC BY-NC**](https://creativecommons.org/licenses/by-nc/4.0/) allows for any usage of the work, as long as attribution is given **and** the usage is non-commercial. You can not make money off of BY-NC work.
 *   [**CC BY-NC-ND**](https://creativecommons.org/licenses/by-nc-nd/4.0/) allows for usage of the work only if attribution is given, usage is non-commercial, and the work is not derivative (the work can not be changed in any way).
 
-There are many other CC licenses that combine all of the above permissions in any permutation you need. Browse the website and pick the one best for you!
+There are many other CC licenses that combine all of the above permissions in any permutation you need. Browse the website and pick the one best for you! You can use their [license chooser tool](https://creativecommons.org/chooser/) to help you pick one out.
 
 In order to license your work under the Creative Commons, all you need to do is indicate this in some fashion and include a link or copy of the license itself. For example, the below is sufficient:
 
