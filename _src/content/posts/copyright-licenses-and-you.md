@@ -77,7 +77,7 @@ A very common public domain license is [**CC0**](https://creativecommons.org/pub
 
 To expand on the previous point, there are **several licenses created by the Creative Commons organization for creative works** **(visual art, music, writing, etc).** These change copyright from "all rights reserved" to "some rights reserved".
 
-**Creative Commons is _not_ used for software.** We will talk about software licenses later, as there are nuances to software that are not covered by the CC licenses.
+**Creative Commons is _not_ used for software (coding).** We will talk about software licenses later, as there are nuances to software that are not covered by the CC licenses.
 
 There are many kind of creative commons licenses, depending on exactly what kind of permissions you want to give. You can view all of them [here](https://creativecommons.org/share-your-work/cclicenses/).
 
@@ -98,7 +98,7 @@ In order to license your work under the Creative Commons, all you need to do is 
 
 ### Permissive Open Source Software Licenses (MIT License)
 
-Many licenses are specifically designed for "open source" software. **The Open Source Initiative defines "open source" as software that can be freely used, modified, and shared.**
+Many licenses are specifically designed for "open source" software/code. **The Open Source Initiative defines "open source" as software/code that can be freely used, modified, and shared.**
 
 **Software licenses frequently have clauses regarding _liability_.** Software is a tool. A tool can be used for destructive purposes that the maker of the tool may not have intended. You may wish to allow strangers to use your code, but you don't want to be held responsible for what they do with it.
 
@@ -141,6 +141,10 @@ To summarize:
 *   No rights reserved, or public domain, means you can use, change, adapt, or even sell the work freely.
 *   Creative Commons licenses are used for creative works and _not_ software.
 *   MIT (permissive) and GPL (non-permissive/copyleft) are two commonly used software licenses.
+
+To give some real world examples of licenses:
+* If I was creating a F2U base, I would license my work under CC BY. People can use the base for whatever they would like, but under CC BY, they would be required to credit me wherever it's used.
+* If I was creating Toyhouse HTML/CSS codes, I would use the MIT license. This would allow people to use the code for whatever they would like and requires them to credit me. It also prevents me from being responsible for anything anyone does with my code.
 
 I hope article has helped you a little bit in understanding the complex world of copyright! For more information, please visit the [Creative Commons](https://creativecommons.org/) and [Open Source Initiative](https://opensource.org/) websites.
 
