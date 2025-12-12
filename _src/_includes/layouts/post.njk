@@ -4,11 +4,12 @@ layout: base
 <h1 class="mb-1">
   {{- title -}}
 </h1>
+Last Updated: {{ date | postDate }}<br>
 
 <hr class="h-px !mt-0.5 !mb-0.5 bg-gray-200 border-0 dark:bg-gray-700"/>
 
 {% if content | toc %}
-  <div class="p-4 border border-gray-200 float-right m-4 ml-4 mt-4 rounded-lg">
+  <div class="p-4 border border-gray-200 m-4 ml-4 mt-4 rounded-lg">
     <b>table of contents</b>
     <hr class="!m-0 my-4">
     {{ content | toc | safe }}
@@ -16,7 +17,6 @@ layout: base
 {% endif %}
 
 <div class="!text-slate-400">
-  Last Updated: {{ date | postDate }}<br>
   <!-- {%- if tags -%} 
   tags:
     {%- for tag in tags -%}

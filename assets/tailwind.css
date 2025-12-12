@@ -8,7 +8,8 @@
   }
 
   h2, h3, h4, h5 {
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #94a3b8;
+    padding-bottom: 3px;
     overflow: auto;
   }
 
@@ -16,7 +17,7 @@
     @apply mx-3 font-bold text-lg;
   }
 
-  a {
+  a, .prose a {
     @apply decoration-slate-400;
     @apply underline;
   }
@@ -25,7 +26,7 @@
     @apply bg-black/25 p-1 rounded-lg;
   }
 
-  a:hover {
+  a:hover, .prose a:hover {
     @apply decoration-slate-200;
   }
 
