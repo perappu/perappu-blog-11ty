@@ -4,6 +4,9 @@ description: A primer to open copyright licenses.
 permalink: /posts/copyright-licenses-and-you/
 date: 2025-12-11
 tags: ["copyright"]
+metadata:
+    title: Copyright Licenses and You
+    description: A primer to open copyright licenses.
 ---
 
 **This is not legal advice**. If you need legal counsel on copyright law, you should talk to a lawyer, not some random bird on the internet.
