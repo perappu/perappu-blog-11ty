@@ -9,7 +9,7 @@ Thank you for considering me for your developer work! ❤️ I'd love to work wi
 
 #### ✨NEW✨ Shared Hosting
 
-I now offer an __alternative to DreamHost__ under the name Perabyte Hosting.
+I now offer an __alternative to DreamHost__.
 
 This hosting is an uncomplicated **$10/month** ($120 yearly) and is a great option for people who would like greater performance and support than what DreamHost offers, but still wish to manage their own code. 
 
@@ -17,7 +17,7 @@ Unlike DreamHost and other hosting options, the plan will not magically grow mor
 
 It comes with **unlimited bandwidth, 25 GB of storage, and free email** (no fighting Sendgrid or Mailersend required!). The environment is also **already prepped and ready for Lorekeeper** with Composer installed by default. More storage can be added at a rate of $2.00 per 10 GB.
 
-I also provide site setups under my shared hosting for the same standard $40 rate, or you can work with your coder of choice.
+**This is for people who are comfortable with coding their own site. I do not offer permanent coder services under the shared hosting.**
 
 While production ready and proudly hosting popular Lorekeeper sites already, guides are still in progress. Please contact me via my Discord stokori or my email stokoriel[at]gmail[dot]com if you are interested.
 
@@ -39,29 +39,45 @@ I can:
 
 **If you're looking for a permanent coder to have on staff, then this what you're looking for!**
 
-##### New Sites
-
-Initial dev work is **$40/hour**, which will be tracked via an external time-tracking tool. **Initial site setup is a minimum of $40.** Depending on your extension choices, most sites can be set up within 2-3 hours of billable time. Vanilla site setup (no extensions) takes about an hour of billable time.
-
-I try to be extremely fair with what counts as billable time. I will send you messages periodically throughout the development process, so you are aware exactly when and what I'm working on! I can explain as much or as little of the process as you'd like.
-
 **Hosting starts at $30/month.** Clients will be hosted on my Hetzner server network. By default, you have unlimited bandwidth and 40GB of storage.
 
-More storage can be added at any time at the rate of $2.00 per 10GB. Pricing is available in monthly or yearly increments.
+More storage can be added at any time at the rate of $2.00 per 10GB. You can pay in monthly or yearly increments.
 
-**This is a better deal than DreamHost!** On top of hosting, the $30 per month includes:
+**Additional dev work after initial site setup is discounted for people I host at $35/hour.** This is as a thank you for choosing me for your hosting!
+
+These are the services covered by managed hosting:
 
 * Basic maintenance
 * Updates to LK
 * Updates to extensions*
 * Bug fixes (&quot;It suddenly broke and I don't know how to fix it&quot;) and other small changes (see TOS for details)
 
-**Additional dev work after initial site setup is discounted for people I host at $35/hour.** This is as a thank you for choosing me for your hosting!
+<small>* Within reason. Some extensions are very large and may take additional dev time and/or compatibility patches to update.</small>
 
-<sub>* Within reason, as some complex extensions may require additional dev time to update.</sub>
+#### Which Hosting is Best for Me?
 
-##### Existing Sites
-If you have an existing LK site and would like to transfer to my services, I'm happy to help! I charge $35/hour with a one hour minimum charge. Most site transitions can be done within 1-2 hours. You will need to be comfortable providing any necessary logins -- for Dreamhost, this is usually your account and PuTTy logins. After that, you still benefit from the discounted $35/hour rate.
+| Shared Hosting is best for...                                                                          | Managed Hosting is best for...                          |
+|--------------------------------------------------------------------------------------------------------|---------------------------------------------------------|
+| - People who are comfortable working with PHP | - People who don't want to worry about code             |
+| - People who can be their own permanent coder                                                          | - People who need a permanent coder                     |
+| - People who can run their own local environment on their own computer                                 | - People who don't have powerful home computers/laptops |
+
+To summarize: You **will need to run your own code for shared hosting**, but there are **no requirements for managed hosting**.
+
+### Setup Services
+
+I provide setups either on Hetzner or for either of my hosting options. I do not do Dreamhost setups. 
+
+#### New Sites
+
+Initial set up is a flat **$40.** This comes with no extensions.
+
+Extensions can be added during site setup at **$40/hr**. Depending on your extension choices, most sites can be set up within 2-3 hours of billable time.
+
+I try to be extremely fair with what counts as billable time. I will send you messages periodically throughout the development process, so you are aware exactly when and what I'm working on! I can explain as much or as little of the process as you'd like.
+
+#### Existing Sites
+If you have an existing LK site and would like to transfer to my hosting services, I'm happy to help! I charge $40/hour with a one hour minimum charge. Most site transitions can be done within 1-2 hours. You will need to be comfortable providing any necessary logins -- for Dreamhost, this is usually your account and PuTTy logins.
 
 ### General Work
 I can also help with general dev work at my standard $40/hour charge. This can include adding extensions, updating your site, etc.
