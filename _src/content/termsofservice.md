@@ -8,6 +8,8 @@ permalink: /commission/tos/index.html
 Hereafter, the person purchasing my services is referred to as "you", "commissioner", or "the commissioner".
 
 #### Changelog
+- **12/19/2025**
+  - Added sections for Managed Hosting and Shared Hosting clients.
 - **10/18/2025**
   - Changed availability back to 4-5 PM
 - **8/29/2025**
@@ -20,13 +22,6 @@ Hereafter, the person purchasing my services is referred to as "you", "commissio
   - Added a simpler definition for PII.
   - Added note that these terms are legally binding.
   - Changed references from DigitalOcean to Hetzner.
-- **11/3/2024**
-  - Added terms regarding "ghosting" of commissioner and/or circumstances where the commissioner blocks me.
-  - Added clarification regarding:
-    - Payment
-    - Personal Identifiable Information
-    - Hosting services
-  - Reorganized the Terms of Service for legibility.
 
 #### 1. General
 
@@ -63,12 +58,12 @@ Hereafter, the person purchasing my services is referred to as "you", "commissio
     - If money has been exchanged, you will be refunded for any work not performed.
 7. **All hourly work is rounded up to the nearest hour.** This means $35 minimum for hosting clients, and $40 minimum for all others.
 
-#### 4. Hosting Details
+#### 4. Managed Hosting Details
 
 **This section applies to people whose websites I host via my managed hosting/long-term support services.**
 
-1.  **Hosting payment has a 15 day grace period.** If payment is delayed by 15 days, or the subscription is cancelled, your site will be turned off until paid/resumed.
-2.  **Hosting payment will be set up as a PayPal subscription.** Alternatives are available on a case-by-case basis.
+1.  **Managed hosting payment has a 15 day grace period.** If payment is delayed by 15 days, or the subscription is cancelled, your site will be turned off until paid/resumed.
+2.  **Managed hosting payment will be set up as a PayPal subscription.** Alternatives are available on a case-by-case basis.
 3.  You may pay monthly or yearly. Other options can also be discussed on a case-by-case basis. I do not offer discounts for advance payments at this time.
 4.  **Bug fixes, version upgrades, and changes that can be made in 5 minutes or less (typically UI changes) are covered by your monthly charge.** To prevent overworking myself, frequent small changes will incur additional dev time at your discounted $35/hour rate. I'll let you know as soon as we approach that amount -- there will be no surprises.
    - What constitutes as "five minute change" is up to my discretion.
@@ -93,6 +88,18 @@ Hereafter, the person purchasing my services is referred to as "you", "commissio
 13.  **If you have been unresponsive to my inquries for over 30 days** (also known as "ghosting") or have blocked me via Discord or other communication channels, **I will assume you are no longer interested in my services.**
      - Your server will be shutdown, and your site no longer accessible. Your data will be stored for the standard one year period.
      - If you wish to resume my services, you must pay any delinquent hosting charges, as well as a $35 fee to recreate your server.
+
+#### 4. Shared Hosting Details
+
+**This section applies to people I host through my shared hosting services.**
+
+1. **Shared hosting has a 7 day grace period.** Your site will be automatically suspended if the invoice is not paid within seven days.
+2. **Shared hosting is paid for and managed through the billing site, [billing.perabyte.host](https://billing.perabyte.host).**
+3. Domain names must be purchased from an external registrar, such as Namecheap or Porkbun. I can not provide domain names.
+4. If you end hosting services, your hosting will run out to the next due date. After that, your site will be suspended and inaccessible.
+5. Daily backups are stored in encrypted Backblaze B2 Cloud Storage.
+  - Backups from the past five days are readily available and can be automatically restored using the admin panel. Backups are not stored past that date.
+6. Shared hosting clients can hire me for site setup, updates, or maintenance at my standard rate.
 
 <div class="text-center">
 
