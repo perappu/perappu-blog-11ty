@@ -118,7 +118,7 @@ You may be familiar with the [Lorekeeper](https://github.com/lk-arpg/lorekeeper)
 
 GitHub makes it very easy for you to view the license available on a piece of software. Simply open a repository and look to the right, and you'll find your answer:
 
-[<img src="/content/img/github-license-location.png" alt="image showcasing the license link on a github repo">](/content/img/github-license-location.png){data-fslightbox data-type="image"}
+[<img src="/content/img/copyright-licenses-and-you/github-license-location.png" alt="image showcasing the license link on a github repo">](/content/img/copyright-licenses-and-you/github-license-location.png){data-fslightbox data-type="image"}
 
 There are many, many open source licenses. **You can view the ones recognized by the Open Source Initiative** [**here**](https://opensource.org/licenses)**.**
 

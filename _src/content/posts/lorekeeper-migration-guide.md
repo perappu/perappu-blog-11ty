@@ -30,11 +30,11 @@ First, **SSH into your current site and run `php artisan down`.** This will put 
 
 **If you have PHPMyAdmin:**
 1. Open up PHPMyAdmin and select your database from the sidebar.
-![alt text](/content/img/lorekeeper-migration-guide-1.png)
+![alt text](/content/img/lorekeeper-migration-guide/lorekeeper-migration-guide-1.png)
 2. Select "Export" from the top navigation.
-![alt text](/content/img/lorekeeper-migration-guide-2.png)
+![alt text](/content/img/lorekeeper-migration-guide/lorekeeper-migration-guide-2.png)
 3. For most websites, the "quick" settings will be acceptable. Click "Export", download the file, and you're done!
-![alt text](/content/img/lorekeeper-migration-guide-3.png)
+![alt text](/content/img/lorekeeper-migration-guide/lorekeeper-migration-guide-3.png)
 
 **If you do NOT have PHPMyAdmin:**
 You will need to do this from the command line, or a standalone SQL client such as DBeaver or MySQLWorkbench. For simplicity's sake, I'll walk through the CLI option.
@@ -50,7 +50,7 @@ You will need to do this from the command line, or a standalone SQL client such 
 #### Getting the /public Folder
 
 1. While you are still connected via FTP, navigate to your site's files. You should see a folder labeled /public/, like so:
-![alt text](/content/img/lorekeeper-migration-guide-4.png)
+![alt text](/content/img/lorekeeper-migration-guide/lorekeeper-migration-guide-4.png)
 2. Find a suitable location on your computer and copy over the **entire** /public folder.
 3. Wait for the files to copy. This may take a _long_ time if you have a lot of data on your site! Just be patient.
 3. After the files finish copying, you're done!
@@ -60,7 +60,7 @@ Alternatively, you can use `rsync`, but that's for advanced users comfortable wi
 #### Getting the .env File
 
 1. While you are still in the location of your public folder, find the file called `.env`. It may be greyed out and look something like this:
-![alt text](/content/img/lorekeeper-migration-guide-5.png)
+![alt text](/content/img/lorekeeper-migration-guide/lorekeeper-migration-guide-5.png)
 2. If you do not have this file visible, STOP. Ask for help.
 3. Copy this file anywhere safe on your computer. (I like to store it alongside the public folder.)
 4. You're done!
@@ -80,35 +80,35 @@ First, create a new server on your provider of choice. For this tutorial, I will
 #### 1. Provisioning Your Server
 
 After logging into Hetzner Cloud, click "Servers" on the left-hand navigation.
-![alt text](/content/img/vivaldi_GMyBj95Ox6.png)
+![alt text](/content/img/lorekeeper-migration-guide/provison-server-1.png)
 
 Click "Add Server".
-![alt text](/content/img/vivaldi_aa9v93WM3j.png)
+![alt text](/content/img/lorekeeper-migration-guide/provison-server-2.png)
 
 Select a server location that makes sense to you. I personally select us-west.
-![alt text](/content/img/vivaldi_Is1mSkbWKY.png)
+![alt text](/content/img/lorekeeper-migration-guide/provision-server-3.png)
 
 This guide will use the most recent version of Ubuntu, but Moif's guide uses Debian. Either is fine, though your commands may differ depending on your flavor of Linux. Don't use anything else unless you know what you're doing.
-![alt text](/content/img/vivaldi_ZHJcmsJf2F.png)
+![alt text](/content/img/lorekeeper-migration-guide/provision-server-4.png)
 
 Select the hardware you'd like to have. The cheapest option is fine for small sites. You can always upgrade later!
-![alt text](/content/img/vivaldi_4Ujkn557Y2.png)
+![alt text](/content/img/lorekeeper-migration-guide/provision-server-5.png)
 
 Scroll to "SSH Keys". If you don't have one set up already, click "Add SSH Key".
-![alt text](/content/img/vivaldi_EJuicWBu64.png)
+![alt text](/content/img/lorekeeper-migration-guide/provision-server-6.png)
 
 First, we need your SSH key in OpenSSH format. You can use the same key you used on your previous server (and in fact you _should_, because it makes the transition _much_ smoother).
 
 1. Open up PuTTyGen. This should be familiar to you from when you first created your key. Click "Load".
-    ![alt text](/content/img/puttygen_hEojnmX3WT.png)
+    ![alt text](/content/img/lorekeeper-migration-guide/puttygen-1.png)
 
 2. Select your existing .ppk file.
     
 3. Copy everything in the highlighted box.
-    ![alt text](/content/img/puttygen_xKvFweZrdW.png)
+    ![alt text](/content/img/lorekeeper-migration-guide/puttygen-2.png)
 
 4. Paste it into Hetzner like so:
-    ![alt text](/content/img/vivaldi_6w66QSjWrC.png)
+    ![alt text](/content/img/lorekeeper-migration-guide/provision-server-7.png)
 
 Now, save some time by loading in your SSH key before you've even created your server!
 
@@ -132,29 +132,29 @@ users:
 ```
 
 5. Replace the YOURSITE with the name of your site and SITEKEY with the _entire_ text of your OpenSSH public key **within quotation marks**. This is the same SSH key you just copied a few steps ago. It'll look something like this:
-![alt text](/content/img/notepad++_hmNfZgO9XP.png)
+![alt text](/content/img/lorekeeper-migration-guide/notepad++_hmNfZgO9XP.png)
 
 **NOTE THAT THIS WILL DISABLE PASSWORD AUTHENTICATION ON YOUR SERVER.** This is recommended for security purposes. If you need password based authentication for any reason (such as multiple coders working on your site, or you don't know how to use SSH with FTP), delete the line `ssh_pwauth: false` from the above text.
 
 6. Go back to Hetzner, and paste in the cloud-config. Like so:
-![alt text](/content/img/vivaldi_yEF673vSqW.png)
+![alt text](/content/img/lorekeeper-migration-guide/provision-server-8.png)
 
 7. Name your server:
-![alt text](/content/img/vivaldi_T2hGqedCHy.png)
+![alt text](/content/img/lorekeeper-migration-guide/provision-server-9.png)
 
 8. Select "Create and Buy Now".
-![alt text](/content/img/vivaldi_M3ghkJ4Tr7.png)
+![alt text](/content/img/lorekeeper-migration-guide/provision-server-10.png)
 
 #### 2. Setting Up Your Server
 
 1. After a little bit of setup time, your server will be created. Copy the IP address generated by Hetzner:
-![alt text](/content/img/vivaldi_7ujQI3hdJe.png)
+![alt text](/content/img/lorekeeper-migration-guide/setting-up-server-1.png)
 
 2. In PuTTY, load your saved server credentials, but type in your new IP address instead. Make sure you aren't automatically logging in with a username -- it should look something like this:
-![alt text](/content/img/putty_YKJNeoa6Gd.png)
+![alt text](/content/img/lorekeeper-migration-guide/setting-up-server-2.png)
 
 3. Click "OK". If prompted with something like this, click "Accept".
-![alt text](/content/img/putty_z1jKCVX5Tf.png)
+![alt text](/content/img/lorekeeper-migration-guide/setting-up-server-3.png)
 
 4. When prompted for a username, type "root" and hit enter. You should be automatically logged in. If not, check that your SSH key is set correctly in PuTTY.
 
@@ -164,26 +164,26 @@ users:
     ```
     
     It should look something like this (but with a better password!):
-    ![alt text](/content/img/Code_s4wEEm6V0C.png)
+    ![alt text](/content/img/lorekeeper-migration-guide/Code_s4wEEm6V0C.png)
     If you don't see an error message, that means it worked!
 
 6. Close PuTTY.
 
 7. Re-open putty and re-enter the IP address of your new server. Feel free to save this new configuration, but do *not* overwrite your old one! Call it something like `site-new`. 
-![alt text](/content/img/putty_FW7cgNXCsf.png)
+![alt text](/content/img/lorekeeper-migration-guide/putty_FW7cgNXCsf.png)
 
 8. This time, log in with your normal username. You should be automatically logged in again.
 
 8. We will now disable the root login for security purposes. Type in the following command, and hit "enter":
 ```sudo nano /etc/ssh/sshd_config```
 When prompted for your password, enter the password you previously set as root with `chpasswd`.
-![alt text](/content/img/Obsidian_bgvFVXQsma.png)
+![alt text](/content/img/lorekeeper-migration-guide/Obsidian_bgvFVXQsma.png)
 
 9. Use the arrow keys to scroll to the line starting with `#PermitRootLogin` (depending on your provider, it may look slightly different):
-![alt text](/content/img/putty_ZdhPgUvlv9.png)
+![alt text](/content/img/lorekeeper-migration-guide/putty_ZdhPgUvlv9.png)
 
 10. Change it to `PermitRootLogin no`:
-![alt text](/content/img/putty_IUprvzQfMd.png)
+![alt text](/content/img/lorekeeper-migration-guide/putty_IUprvzQfMd.png)
 
 11. Type in `sudo systemctl restart ssh`. If you see no feedback, that means it worked!
 
@@ -209,12 +209,12 @@ Type `y` when prompted.
 When prompted to select a web server, we don't want any of these options, because we'll be using nginx. 
 
 Press `tab`. This will automatically select the OK button. Then, hit `enter`.
-![alt text](/content/img/putty_n1GHJxyqYQ.png)
+![alt text](/content/img/lorekeeper-migration-guide/putty_n1GHJxyqYQ.png)
 
 These all may take a while to install. That's OK! Just be patient.
 
 When prompted again for PHPMyAdmin, use the arrow keys to select "No".
-![alt text](/content/img/putty_ZVdNs7Mpsw.png)
+![alt text](/content/img/lorekeeper-migration-guide/putty_ZVdNs7Mpsw.png)
 
 #### 4. Hardening the Server
 
@@ -223,7 +223,7 @@ On Dreamhost, a lot of security settings are configured for you. When we own our
 First, we are going to **set up UFW** (or, Uncomplicated Firewall) to block all ports except the ones we need.
 
 1. Type in `sudo ufw app list`. Ensure that these options are available:
-![alt text](/content/img/Code_8G2ZljSW5w.png)
+![alt text](/content/img/lorekeeper-migration-guide/Code_8G2ZljSW5w.png)
 
 2. Type in these two commands:
 ```
@@ -232,18 +232,18 @@ sudo ufw allow 'OpenSSH'
 ```
 
 3. Type in `sudo ufw enable`. When prompted, type in `y` and hit `enter`.
-![alt text](/content/img/putty_toecA9eVYR.png)
+![alt text](/content/img/lorekeeper-migration-guide/putty_toecA9eVYR.png)
 
 4. Type in `sudo ufw status`. You should see something like this:
-![alt text](/content/img/putty_4ReztziAI1.png)
+![alt text](/content/img/lorekeeper-migration-guide/putty_4ReztziAI1.png)
 
 Next, we will **install Fail2Ban**. This will automatically ban IPs that try to brute force their way into your server.
 
 1. Type in `sudo systemctl start fail2ban && sudo systemctl enable fail2ban`. You should see something like this:
-![alt text](/content/img/Code_ENzKrLaJ4T.png)
+![alt text](/content/img/lorekeeper-migration-guide/Code_ENzKrLaJ4T.png)
 
 2. Type in `sudo fail2ban-client status`. You should see something like this:
-![alt text](/content/img/vivaldi_80vNSYedr6.png)
+![alt text](/content/img/lorekeeper-migration-guide/vivaldi_80vNSYedr6.png)
 
 **Important Note With Fail2Ban:** Sometimes, F2B can ban genuine connections, especially if you have multiple coders working on your site. Typically, these are freed after an hour or two. However, to delete all bans immediately, you can always execute the command `sudo fail2ban-client unban --all`.
 
@@ -276,49 +276,49 @@ First, type in `cd ~` to go to your home directory, if you're not there already.
 Type in `sudo mysql -u root -p` and enter the password you just set up.
 
 Remember the .env file you copied? Open it up in Notepad! You should see a block like this:
-![alt text](/content/img/notepad++_9JcuAg8T1Z.png)
+![alt text](/content/img/lorekeeper-migration-guide/notepad++_9JcuAg8T1Z.png)
 
 We're going to do some things with these values. Once you are in the MySQL "shell", copy paste this command, with the appropriate value changed:
 `CREATE DATABASE NAMEOFDATABASE;`
 
 It should look something like this:
-![alt text](/content/img/putty_0QtSG91521.png)
+![alt text](/content/img/lorekeeper-migration-guide/putty_0QtSG91521.png)
 
 Next, we will create a database user and grant it privileges on this table you just set up. 
 
 `GRANT ALL PRIVILEGES ON NAMEOFDATABASE.* TO 'DATABASEUSER'@'localhost' IDENTIFIED BY 'DATABASEPASSWORD';`
 
 It should look something like this:
-![alt text](/content/img/putty_scRSYZbZhI.png)
+![alt text](/content/img/lorekeeper-migration-guide/putty_scRSYZbZhI.png)
 
 Type `exit` to leave the MySQL shell, and you'll get a message that says `Bye`.
 
 Now, open up your FTP client. We are going to load in the .sql file that you got earlier!
 
 Connect to your new server using the IP from Hetzner. I use WinSCP with SSH configured, so my window looks like this:
-![alt text](/content/img/WinSCP_VhmqJPjJbM.png)
+![alt text](/content/img/lorekeeper-migration-guide/WinSCP_VhmqJPjJbM.png)
 
 Next, you're going to copy over the SQL dump file into your home directory. For me, it looks like this:
-![alt text](/content/img/WinSCP_yD6NJGx1et.png)
+![alt text](/content/img/lorekeeper-migration-guide/WinSCP_yD6NJGx1et.png)
 
 Once that's done, go back to PuTTY. We will run this command:
 
 `mariadb NAMEOFDATABASE < NAMEOFBACKUPFILE.sql`
 
 It should look something like this:
-![alt text](/content/img/putty_PKZHX5UInV.png)
+![alt text](/content/img/lorekeeper-migration-guide/putty_PKZHX5UInV.png)
 
 You'll notice you didn't get any feedback. That's OK.
 
 We're going to validate that the database loaded correctly. Type in `sudo mysql -u root -p` and enter the password again.
 
 Type `USE NAMEOFDATABASE;`. For example:
-![alt text](/content/img/Code_h0W7Y7Ldlx.png)
+![alt text](/content/img/lorekeeper-migration-guide/Code_h0W7Y7Ldlx.png)
 
 Next, we will type in `SELECT * FROM users LIMIT 10;`. This will get us the first 10 users in the database. If everything worked correctly, you'll see a whole bunch of text fly by, with some familiar emails and usernames!
 
 For obvious reasons, I can't show you a full view, but it'll look something like this:
-![alt text](/content/img/putty_UdLY5GMdgE.png)
+![alt text](/content/img/lorekeeper-migration-guide/putty_UdLY5GMdgE.png)
 
 Next, let's set up PHPMyAdmin!
 
@@ -329,7 +329,7 @@ We are going to place PHPMyAdmin behind this thing called an HTTP gateway. This 
 `openssl passwd`
 
 2. Enter your password when prompted. It should print out a hashed password, like this. Make note of it!
-![alt text](/content/img/putty_1jELox59QM.png)
+![alt text](/content/img/lorekeeper-migration-guide/putty_1jELox59QM.png)
 
 3. Next, create the authentication file:
 
@@ -339,7 +339,7 @@ We are going to place PHPMyAdmin behind this thing called an HTTP gateway. This 
 `USERNAME:HASHEDPASSWORD`
 
     For example:
-    ![alt text](/content/img/putty_kVu7Sj6WSP.png)
+    ![alt text](/content/img/lorekeeper-migration-guide/putty_kVu7Sj6WSP.png)
 
 5. Press `ctrl+x` and then `y` to exit and save. 
 
@@ -456,10 +456,10 @@ Open up your git client. I personally use GitKraken, but this will be applicable
 Essentially, we're going to copy our existing connection to the old site, duplicate it, and change the IP address.
 
 My old remote looked like this:
-![alt text](/content/img/gitkraken_eAVwYd4dR2.png)
+![alt text](/content/img/lorekeeper-migration-guide/gitkraken_eAVwYd4dR2.png)
 
 So my new remote is this:
-![alt text](/content/img/gitkraken_7xkmuAQy6r.png)
+![alt text](/content/img/lorekeeper-migration-guide/gitkraken_7xkmuAQy6r.png)
 
 **Yours will look different from mine.** That is OK. We copying _exactly_ what you had before, and are **ONLY** changing the IP address/URL. 
 
