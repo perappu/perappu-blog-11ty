@@ -15,11 +15,18 @@ This hosting is an uncomplicated **$10/month** ($120 yearly) and is a great opti
 
 Unlike DreamHost and other hosting options, the plan will not magically grow more expensive each year -- I am committed to staying at the $10/month price point.
 
-It comes with **unlimited bandwidth, 25 GB of storage, and free email** (no fighting Sendgrid or Mailersend required!). The environment is also **already prepped and ready for Lorekeeper** with Composer installed by default. More storage can be added at a rate of $2.00 per 10 GB.
+It comes with:
+- Unlimited bandwidth
+- 25 GB of storage (More can be added at a rate of $2 per 10GB)
+- Free transactional emails
+- Composer and other Lorekeeper prerequisites pre-installed
+- The ability to enable Anubis as an anti-bot measure*
 
 **This is for people who are comfortable with coding their own site. I do not offer permanent coder services under the shared hosting.**
 
-While production ready and proudly hosting popular Lorekeeper sites already, guides are still in progress. Please contact me via my Discord stokori or my email stokoriel[at]gmail[dot]com if you are interested.
+A setup guide can be found [here](/posts/perabyte-hosting-setup/). Please contact me via email (stokoriel[at]gmail[dot]com) or via Discord (stokori) if you have any questions.
+
+<small>* Requires a small code tweak to your Lorekeeper code to allow trusted proxies</small>
 
 #### Managed Hosting
 
