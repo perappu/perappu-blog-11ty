@@ -8,6 +8,8 @@ permalink: /commission/tos/index.html
 Hereafter, the person purchasing my services is referred to as "you", "commissioner", or "the commissioner".
 
 #### Changelog
+- **6/11/2026**
+  - Added anti-AI usage clause.
 - **12/19/2025**
   - Added sections for Managed Hosting and Shared Hosting clients.
 - **10/18/2025**
@@ -34,6 +36,9 @@ Hereafter, the person purchasing my services is referred to as "you", "commissio
       - **This means you can not share any information that can be used to "doxx" someone, such as legal names and addresses.**
 4. In turn, **you may not share my personal identifiable information for any reason**.
 5. The right to use my work is not an endorsement in any way.
+6. I do not work with generative AI tools, and I will expect you do the same. I do not work with people who use generative AI in any capacity.
+  - I reserve the right to cease work immediately if you use generative AI or your site contains AI-generated content.
+  - This applies, but is not limited, to: AI asset/image/text/code generation, AI code reviews, AI proofreading, etc.
 
 #### 2. Payment
 
