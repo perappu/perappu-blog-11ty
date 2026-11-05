@@ -60,7 +60,9 @@ And perform a secure installation:
 sudo mariadb-secure-installation
 ```
 
-I personally set a different root password for each node. The root account is **not** replicated.
+~~I personally set a different root password for each node. The root account is **not** replicated.~~
+
+**Update 11/05/2036:** It does appear now that the root password is replicated. I believe there are things you can do to prevent this, but I have left it be for now.
 
 Answer YES to:
 - Remove anonymous users
@@ -243,6 +245,17 @@ sudo systemctl start haproxy
 
 Many guides will now configure stats for HAProxy. I decided not to, because I didn't want everyone on the internet to be able to see the stats of my load balancer.
 
+## A Note About Updating MariaDB
+
+For completely inexplicable reasons, I find that when running `apt update && apt upgrade` it will sometimes break MariaDB. This happens even when MariaDB is stopped.
+
+To fix this, I have found this command works:
+```
+sudo apt install --reinstall mariadb-server-galera
+```
+
+After that, the node should connect as normal.
+
 ## Conclusion
 
 In your web application, you should now be able to use the IP address of your HAProxy server just as if it were a normal database on port 3306. 
@@ -251,4 +264,4 @@ Optionally, you can set the DNS records of a domain to point towards the HAProxy
 
 As an aside, I also investigated utilizing ProxySQL instead of HAProxy for a more "intelligent" load balancing. Unfortunately, ProxySQL requires knowledge of _all_ database users, so if you're like me and using it in a circumstance where new DB users are being added all the time, you'd need something to synchronize new accounts into ProxySQL. Someone did [create a script](https://github.com/xeonvs/ProxySQL-User-Sync) but I struggled to make it work. It also would have required me to set up the proxy server to be listening on a port other than 3306, and I wanted to keep everything as compatible as possible.
 
-Hope this quick guide saved you some digging through documentation. :] Thanks for reading!
+Hope this quick guide saved you some digging through documentation. Thanks for reading!
