@@ -41,9 +41,9 @@ You will need to do this from the command line, or a standalone SQL client such 
 
 1. SSH into either your server or, if applicable, your standalone database server.
 2. Make sure you are in your home directory(`cd ~`) as this will make downloading the file easier.
-2. Execute this command, replacing the YOURDATABASEUSERNAME and YOURDATABASENAME with the correct values. It may ask for password authentication -- enter the password you use to log into the database.
+2. Execute this command, replacing the DBUSERNAME and DBNAME with the correct values. It will ask for password authentication -- enter the password you use to log into the database.
 
-```mysqldump --skip-lock-tables --column-statistics=0 --routines --add-drop-table --disable-keys --extended-insert --set-gtid-purged=OFF -u YOURDATABASEUSERNAME YOURDATABASENAME```
+```mysqldump --skip-add-locks --single-transaction -u DBUSERNAME -p DBNAME > ursacoast.sql```
 
 3. Log into your server (or database server) via FTP (Filezilla or WinSCP). You should see a file labeled `.sql`. Copy this file to your hard drive.
 
