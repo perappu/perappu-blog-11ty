@@ -1,8 +1,6 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/Primer/19.1.1/tooltips.min.css");
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @layer base {
   h1 {

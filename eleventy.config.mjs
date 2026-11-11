@@ -11,6 +11,7 @@ import markdownItAttrs from 'markdown-it-attrs';
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import codeClipboard from "eleventy-plugin-code-clipboard";
+import tailwindcss from "@tailwindcss/postcss";
 
 export default async function (eleventyConfig) {
 
