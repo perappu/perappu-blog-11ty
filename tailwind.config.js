@@ -1,10 +1,8 @@
-
 /** @type {import('tailwindcss/typography').Config} */
 /** @type {import('tailwindcss/plugin').Config} */
+/** @type {import('tailwindcss').Config} */
 
 import pluginTypography from '@tailwindcss/typography'
-
-/** @type {import('tailwindcss').Config} */
 
 const textShadow = () => (function({ matchUtilities, theme }) {
 	matchUtilities(
