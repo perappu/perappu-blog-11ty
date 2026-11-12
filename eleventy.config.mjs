@@ -74,6 +74,7 @@ export default async function (eleventyConfig) {
 
     eleventyConfig.addWatchTarget('/assets/tailwind.css')
     eleventyConfig.addWatchTarget('/content/**/*.*')
+    eleventyConfig.addWatchTarget('/_data/*.*')
 
     eleventyConfig.addNunjucksAsyncFilter('postcss', postcssFilter)
     eleventyConfig.setLayoutsDirectory('_includes/layouts')

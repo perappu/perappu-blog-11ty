@@ -9,20 +9,18 @@
 
         <title>perappu's blog -&nbsp;{{- title or "home" -}}</title>
 
-        <meta property='og:title' content='{{ title or metadata.title }}' />
+        <meta property='og:title' content="perappu's blog - {{ title or metadata.title }}" />
         <meta
             property='og:description'
-            content='{{ description or metadata.description }}'
+            content='{{ description or collections.metadata.description }}'
         />
         <meta
             property='og:image'
             content='{{ ogImage or metadata.url + metadata.defaultOgImage }}'
         />
-        <meta property='og:url' content='{{ metadata.url + page.url }}' />
+        <meta property='og:url' content='{{ metadata.url }}{{ page.url or page.permalink }}' />
         <meta property='og:type' content="{{ ogType or 'website' }}" />
         <meta property='og:site_name' content='{{ metadata.title }}' />
-
-        {# Twitter Card #}
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:title' content='{{ title or metadata.title }}' />
         <meta

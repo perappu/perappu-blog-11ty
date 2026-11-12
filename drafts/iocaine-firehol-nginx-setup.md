@@ -23,6 +23,7 @@ This guide is written for Iocaine v3. I'll try to update this when Iocaine v4 re
 
 I am using Ubuntu/Debian for this guide. If you're using something else, you'll need to find the equivalent command for your distro.
 
+> [!IMPORTANT]
 > Run everything in this guide as `sudo` (you can use `sudo su` for convenience).
 
 Iocaine can be installed via apt:
