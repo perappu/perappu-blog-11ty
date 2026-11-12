@@ -112,7 +112,7 @@ We will create some extra configs in `config.d` now.
 nano /etc/iocaine/config.d/00-
 ```
 
->If Iocaine is failing to start for ambiguous .kdl file related reasons, and you're certain you've got all your brackets closed properly, it's probably a whitespace issue with the .kdl file. I personally fixed this by opening up the config in Notepad++ and using Edit -> Blank Operations -> Trim Leading and Trailing Space to get everything normalized, then manually re-indenting everything. YMMV on how you choose to solve the problem.
+> If Iocaine is failing to start for ambiguous .kdl file related reasons, and you're certain you've got all your brackets closed properly, it's probably a whitespace issue with the .kdl file. I personally fixed this by opening up the config in Notepad++ and using Edit -> Blank Operations -> Trim Leading and Trailing Space to get everything normalized, then manually re-indenting everything. YMMV on how you choose to solve the problem.
 
 ### NGINX Configuration
 

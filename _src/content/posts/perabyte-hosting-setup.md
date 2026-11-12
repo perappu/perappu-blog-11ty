@@ -230,7 +230,7 @@ Again, if the command is successful, there will be no feedback. For example:
 
 [<img src="/content/img/perabyte-setup/image-36.png" alt="alt text">](/content/img/perabyte-setup/image-36.png){data-fslightbox data-type="image"}
 
-> [!CAUTION] 
+> [!CAUTION]
 > **If the text is red, that means an error occurred.** Check that you didn't make any typos, and ask the Lorekeeper Discord for help.
 
 Instead of typing in `/web/YOURDOMAIN.COM/public_html/YOURDOMAIN.COM`, now we can just type in `~/YOURDOMAIN.COM`!

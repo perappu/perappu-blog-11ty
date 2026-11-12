@@ -89,7 +89,7 @@ export default async function (eleventyConfig) {
             imgAttributes: {
                 loading: 'lazy',
                 decoding: 'async',
-                "eleventy:ignore": "",
+                'eleventy:ignore': '',
             },
             pictureAttributes: {},
             fallback: 'largest',

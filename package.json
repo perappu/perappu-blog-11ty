@@ -36,6 +36,7 @@
         "markdown-it-anchor": "^10.1.0",
         "postcss": "^8.5.32",
         "prettier": "^3.10.0",
+        "prettier-plugin-nunjucks": "^0.2.3",
         "tailwindcss": "^4.3.5"
     },
     "allowScripts": {
