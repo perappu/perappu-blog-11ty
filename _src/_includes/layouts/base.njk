@@ -20,6 +20,9 @@
             {% if page.url == "/" %}{{ metadata.url }}/assets/previews/index.png{% else %}
             {{ metadata.url}}/assets/previews/{{ page.fileSlug }}.png{% endif %}'
         />
+        <meta property='og:image:width' content='1200'/>
+        <meta property='og:image:height' content='630'/>
+        <meta property='og:image:type' content='.png'/>
         <meta property='og:url' content='{{ metadata.url }}{{ page.url or page.permalink }}' />
         <meta property='og:type' content="{{ ogType or 'website' }}" />
         <meta property='og:site_name' content='{{ metadata.title }}' />
