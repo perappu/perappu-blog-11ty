@@ -1,9 +1,9 @@
 ---
-title: "About"
+title: 'About'
 permalink: /about/index.html
 ---
 
-**Hi there!** I'm Kaz, but you may see people use other names too. 
+**Hi there!** I'm Kaz, but you may see people use other names too.
 
 I wear many hats -- web developer, illustrator, professional software destroyer, pigeon wrangler. My main interests include liking birds and all the books you were forced to read in school.
 

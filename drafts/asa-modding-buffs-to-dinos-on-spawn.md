@@ -2,7 +2,7 @@
 title: ASA Modding - Adding Buffs to Dinos on Spawn
 description: How to add a custom buff to a dino on spawn for Ark Survival Ascended.
 date: 2024-06-22
-tags: ["asa modding", "ue5"]
+tags: ['asa modding', 'ue5']
 ---
 
 ### Introduction
@@ -11,7 +11,7 @@ Kind of a weird choice for my first blog post, but I've been spending a lot of t
 
 Onwards!
 
-### 
+###
 
 My initial concept for this mod was to add the functionality of the DynamicColorset dynamic config option.
 

@@ -3,7 +3,7 @@ title: Lorekeeper Setup - Part 1 - Configuring Local
 description: How to setup Lorekeeper on shared hosting, part 1.
 permalink: /posts/lorekeeper-setup-part-1/
 date: 2025-08-02
-tags: ["lorekeeper", "laravel"]
+tags: ['lorekeeper', 'laravel']
 ---
 
 ## There used to be a guide here... it's all grown up!

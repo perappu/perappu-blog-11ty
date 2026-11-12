@@ -3,7 +3,7 @@ title: Copyright Licenses and You
 description: A primer to open copyright licenses.
 permalink: /posts/copyright-licenses-and-you/
 date: 2025-12-11
-tags: ["copyright"]
+tags: ['copyright']
 metadata:
     title: Copyright Licenses and You
     description: A primer to open copyright licenses.
@@ -70,7 +70,7 @@ For example, all US federal government creations are by default public domain. Y
 A very common public domain license is [**CC0**](https://creativecommons.org/public-domain/cc0/), or "No Rights Reserved". CC0 is often considered synonymous with the public domain. The official [summary](https://creativecommons.org/publicdomain/zero/1.0/) for CC0 is as follows:
 
 > The person who associated a work with this deed has dedicated the work to the public domain by waiving all of his or her rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law.
-> 
+>
 > You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission.
 
 ### Creative Commons Licenses (CC BY, CC BY-SA, etc)
@@ -83,10 +83,10 @@ There are many kind of creative commons licenses, depending on exactly what kind
 
 Here are some examples that may be relevant to you:
 
-*   [**CC BY**](https://creativecommons.org/licenses/by/4.0/) allows for any usage of the work, commercial included, as long as attribution is given to the creator.
-*   [**CC BY-SA**](https://creativecommons.org/licenses/by-sa/4.0/) allows for any usage of the work, commercial included, as long as attribution is included **and** any iterations of the work are also licensed under CC BY-SA. (The SA stands for "share-alike".)
-*   [**CC BY-NC**](https://creativecommons.org/licenses/by-nc/4.0/) allows for any usage of the work, as long as attribution is given **and** the usage is non-commercial. You can not make money off of BY-NC work.
-*   [**CC BY-NC-ND**](https://creativecommons.org/licenses/by-nc-nd/4.0/) allows for usage of the work only if attribution is given, usage is non-commercial, and the work is not derivative (the work can not be changed in any way).
+- [**CC BY**](https://creativecommons.org/licenses/by/4.0/) allows for any usage of the work, commercial included, as long as attribution is given to the creator.
+- [**CC BY-SA**](https://creativecommons.org/licenses/by-sa/4.0/) allows for any usage of the work, commercial included, as long as attribution is included **and** any iterations of the work are also licensed under CC BY-SA. (The SA stands for "share-alike".)
+- [**CC BY-NC**](https://creativecommons.org/licenses/by-nc/4.0/) allows for any usage of the work, as long as attribution is given **and** the usage is non-commercial. You can not make money off of BY-NC work.
+- [**CC BY-NC-ND**](https://creativecommons.org/licenses/by-nc-nd/4.0/) allows for usage of the work only if attribution is given, usage is non-commercial, and the work is not derivative (the work can not be changed in any way).
 
 There are many other CC licenses that combine all of the above permissions in any permutation you need. Browse the website and pick the one best for you! You can use their [license chooser tool](https://creativecommons.org/chooser/) to help you pick one out.
 
@@ -107,9 +107,9 @@ The [MIT license](https://opensource.org/license/mit) is very commonly used for 
 The MIT License is as follows:
 
 > Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-> 
+>
 > The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-> 
+>
 > THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 You may be familiar with the [Lorekeeper](https://github.com/lk-arpg/lorekeeper) project, which is a website framework for ARPG (art roleplaying game) and closed species communities. Lorekeeper and the vast majority of its extensions are under the MIT license. **This means you don't need to ask permission to use it and you can do whatever you want with it, _however_ the contributors are not responsible for your actions.**
@@ -134,17 +134,18 @@ Essentially, this type of license is used to prevent corporations from taking ad
 
 To summarize:
 
-*   Copyright licenses are legally binding documents that allow you to easily communicate how people can and can not use the things you own.
-*   You do not need to ask permission to use something if the license already permits it.
-*   There are many different kinds of licenses for many purposes.
-*   All rights reserved means you can not use the work without permission.
-*   No rights reserved, or public domain, means you can use, change, adapt, or even sell the work freely.
-*   Creative Commons licenses are used for creative works and _not_ software.
-*   MIT (permissive) and GPL (non-permissive/copyleft) are two commonly used software licenses.
+- Copyright licenses are legally binding documents that allow you to easily communicate how people can and can not use the things you own.
+- You do not need to ask permission to use something if the license already permits it.
+- There are many different kinds of licenses for many purposes.
+- All rights reserved means you can not use the work without permission.
+- No rights reserved, or public domain, means you can use, change, adapt, or even sell the work freely.
+- Creative Commons licenses are used for creative works and _not_ software.
+- MIT (permissive) and GPL (non-permissive/copyleft) are two commonly used software licenses.
 
 To give some real world examples of licenses:
-* If I was creating a F2U base, I would license my work under CC BY. People can use the base for whatever they would like, but under CC BY, they would be required to credit me wherever it's used.
-* If I was creating Toyhouse HTML/CSS codes, I would use the MIT license. This would allow people to use the code for whatever they would like and requires them to credit me. It also prevents me from being responsible for anything anyone does with my code.
+
+- If I was creating a F2U base, I would license my work under CC BY. People can use the base for whatever they would like, but under CC BY, they would be required to credit me wherever it's used.
+- If I was creating Toyhouse HTML/CSS codes, I would use the MIT license. This would allow people to use the code for whatever they would like and requires them to credit me. It also prevents me from being responsible for anything anyone does with my code.
 
 I hope article has helped you a little bit in understanding the complex world of copyright! For more information, please visit the [Creative Commons](https://creativecommons.org/) and [Open Source Initiative](https://opensource.org/) websites.
 

@@ -1,42 +1,43 @@
 {
-  "name": "perappu-blog-11ty",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {"start": "npm-run-all -p dev:*",
-    "build": "run-s build:*",
-    "dev:11ty": "eleventy --serve",
-    "dev:css": "tailwindcss -i assets/tailwind.css -o _site/assets/tailwind.css --watch --postcss",
-    "build:11ty": "eleventy",
-    "build:css": "tailwindcss -i assets/tailwind.css -o _site/assets/tailwind.css --postcss"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "@11ty/eleventy": "^3.1.8",
-    "@11ty/eleventy-img": "^7.1.1",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
-    "@tailwindcss/cli": "^4.3.5",
-    "@tailwindcss/typography": "^0.5.20",
-    "eleventy-plugin-code-clipboard": "^0.2.0",
-    "luxon": "^3.7.2",
-    "markdown-it-attrs": "^5.0.1",
-    "npm-run-all": "^4.1.5"
-  },
-  "type": "module",
-  "devDependencies": {
-    "@tailwindcss/postcss": "^4.3.5",
-    "autoprefixer": "^10.6.2",
-    "cssnano": "^9.9.0",
-    "eleventy-plugin-toc": "^1.1.5",
-    "markdown-it": "^15.0.3",
-    "markdown-it-anchor": "^10.1.0",
-    "postcss": "^8.5.32",
-    "prettier": "^3.10.0",
-    "tailwindcss": "^4.3.5"
-  },
-  "allowScripts": {
-    "@parcel/watcher@2.6.0": true
-  }
+    "name": "perappu-blog-11ty",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "start": "npm-run-all -p dev:*",
+        "build": "run-s build:*",
+        "dev:11ty": "eleventy --serve",
+        "dev:css": "tailwindcss -i assets/tailwind.css -o _site/assets/tailwind.css --watch --postcss",
+        "build:11ty": "eleventy",
+        "build:css": "tailwindcss -i assets/tailwind.css -o _site/assets/tailwind.css --postcss"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "@11ty/eleventy": "^3.1.8",
+        "@11ty/eleventy-img": "^7.1.1",
+        "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
+        "@tailwindcss/cli": "^4.3.5",
+        "@tailwindcss/typography": "^0.5.20",
+        "eleventy-plugin-code-clipboard": "^0.2.0",
+        "luxon": "^3.7.2",
+        "markdown-it-attrs": "^5.0.1",
+        "npm-run-all": "^4.1.5"
+    },
+    "type": "module",
+    "devDependencies": {
+        "@tailwindcss/postcss": "^4.3.5",
+        "autoprefixer": "^10.6.2",
+        "cssnano": "^9.9.0",
+        "eleventy-plugin-toc": "^1.1.5",
+        "markdown-it": "^15.0.3",
+        "markdown-it-anchor": "^10.1.0",
+        "postcss": "^8.5.32",
+        "prettier": "^3.10.0",
+        "tailwindcss": "^4.3.5"
+    },
+    "allowScripts": {
+        "@parcel/watcher@2.6.0": true
+    }
 }

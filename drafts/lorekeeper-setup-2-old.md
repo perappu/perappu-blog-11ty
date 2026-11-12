@@ -3,10 +3,11 @@ title: Lorekeeper Setup - Part 2 - Configuring Live
 description: How to setup Lorekeeper on shared hosting, part 2.
 permalink: /posts/lorekeeper-setup-part-2/
 date: 2025-08-02
-tags: ["lorekeeper", "laravel"]
+tags: ['lorekeeper', 'laravel']
 ---
 
 ## Introduction
+
 This is a guide on how to setup your Lorekeeper hosting on my Dreamhost alternative, [Perabyte](https://perabyte.dev). While I hesitate to make this setup guide an advertisement for my own service, it has some notable advantages over Dreamhost. Part of the setup is already completed for you, it is more stable than DH/cheaper in the long run, and other benefits.
 
 If you prefer Dreamhost, some of this tutorial will still apply, although it will require some extra steps. These are detailed in some older guides for Lorekeeper.
@@ -14,6 +15,7 @@ If you prefer Dreamhost, some of this tutorial will still apply, although it wil
 **This second part walks you through setting up your local copy of Lorekeeper. If you have NOT set up your local, click [here](/posts/lorekeeper-setup-part-1) for part one.**
 
 ## Before You Start
+
 - **This guide assumes you have a local copy of Lorekeeper already installed and functional.** This is REQUIRED before progressing further.
 - **This guide assumes you are on Windows.** Linux and Mac have alternatives to XAMPP and different methods for SSH. Please reach out to the Lorekeeper Discord if you're on one of those operating systems.
 - **Please read every step of this guide carefully,** especially because this section involves real life money. I highly recommend doing a full read-through before you even get started.
@@ -30,24 +32,24 @@ If you prefer Dreamhost, some of this tutorial will still apply, although it wil
 
 3. Here you have three options for your domain name.
 
- - You can buy it through Perabyte, which is convenient but a dollar or two more expensive.
- - You can buy it through a third party like [Namecheap](https://www.namecheap.com) (the registrar I recommend), which is less convenient but potentially cheaper. Namecheap's domains also come with privacy protection, which I'm unable to provide.
+- You can buy it through Perabyte, which is convenient but a dollar or two more expensive.
+- You can buy it through a third party like [Namecheap](https://www.namecheap.com) (the registrar I recommend), which is less convenient but potentially cheaper. Namecheap's domains also come with privacy protection, which I'm unable to provide.
 
-  For the sake of this example, I will be buying a new domain. I will include a section later on the page on how to buy a domain through Namecheap and configure it.
+For the sake of this example, I will be buying a new domain. I will include a section later on the page on how to buy a domain through Namecheap and configure it.
 
-  [<img src="/content/img/perabyte-setup/buying-hosting-2.png" alt="clicking the store buttons">](/content/img/perabyte-setup/buying-hosting-2.png){data-fslightbox data-type="image"}
+[<img src="/content/img/perabyte-setup/buying-hosting-2.png" alt="clicking the store buttons">](/content/img/perabyte-setup/buying-hosting-2.png){data-fslightbox data-type="image"}
 
-4. Next, you'll be taken to this page. **Enter in any information about your plans for the website, as well as your contact     information.** This is just to make sure you're a real person! Don't stress it too hard -- anything'll do. Take this as an opportunity to talk about your species if you want! 
+4. Next, you'll be taken to this page. **Enter in any information about your plans for the website, as well as your contact information.** This is just to make sure you're a real person! Don't stress it too hard -- anything'll do. Take this as an opportunity to talk about your species if you want!
 
     After that, click "Continue".
 
-  [<img src="/content/img/perabyte-setup/buying-hosting-3.png" alt="clicking the store buttons">](/content/img/perabyte-setup/buying-hosting-3.png){data-fslightbox data-type="image"}
+[<img src="/content/img/perabyte-setup/buying-hosting-3.png" alt="clicking the store buttons">](/content/img/perabyte-setup/buying-hosting-3.png){data-fslightbox data-type="image"}
 
-5. You'll then have the opportunity to review your cart. **Billing is done pro-rata, which means that you paying for the remainder of the *current* month and then the month after, so that billing starts on the 1st of the month.** If everything looks good, click "Checkout".
+5. You'll then have the opportunity to review your cart. **Billing is done pro-rata, which means that you paying for the remainder of the _current_ month and then the month after, so that billing starts on the 1st of the month.** If everything looks good, click "Checkout".
 
 [<img src="/content/img/perabyte-setup/buying-hosting-4.png" alt="clicking the store buttons">](/content/img/perabyte-setup/buying-hosting-4.png){data-fslightbox data-type="image"}
 
-6. After that, progress through the checkout screens! __Please keep in mind what address you enter if buying a domain name. Don't doxx yourself!__ When you're doing, you should be presented with a screen like this:
+6. After that, progress through the checkout screens! **Please keep in mind what address you enter if buying a domain name. Don't doxx yourself!** When you're doing, you should be presented with a screen like this:
 
 [<img src="/content/img/perabyte-setup/buying-hosting-5.png" alt="clicking the store buttons">](/content/img/perabyte-setup/buying-hosting-5.png){data-fslightbox data-type="image"}
 
@@ -65,7 +67,7 @@ If you prefer Dreamhost, some of this tutorial will still apply, although it wil
 
 ## Optional: Configuring Your Domain Name
 
-If you bought your domain name through something like Namecheap, you'll have a little bit of configuring to do first. 
+If you bought your domain name through something like Namecheap, you'll have a little bit of configuring to do first.
 
 1. In cPanel, scroll down to "Domains" and click "Zone Editor".
 
@@ -147,8 +149,8 @@ If you bought your domain name through something like Namecheap, you'll have a l
 
 [<img src="/content/img/perabyte-setup/setting-up-ssh-15.png" alt="alt text">](/content/img/perabyte-setup/setting-up-ssh-12.png){data-fslightbox data-type="image"}
 
-> ***Sidenote:*** If you have multiple people working on your site, you will need to add SSH keys for them using this same method. They can provide you the public key, which you can add in cPanel just like you added yours.
->  
+> _**Sidenote:**_ If you have multiple people working on your site, you will need to add SSH keys for them using this same method. They can provide you the public key, which you can add in cPanel just like you added yours.
+>
 > Password authentication is not available on Perabyte for security purposes -- password authentication is incredibly insecure compared to SSH keys. Just remember -- **NEVER** give out your private key!
 
 12. Great! You can now connect to your server using the SSH key you just generated. We're going to do exactly that. Open up PuTTY.
@@ -183,7 +185,7 @@ If you bought your domain name through something like Namecheap, you'll have a l
 
 ![alt text](image-29.png)
 
-> ***Sidenote:*** If you want to prevent the checklist from popping up every time you open the software, you can click "Repair" next to one of the two options here. 
+> _**Sidenote:**_ If you want to prevent the checklist from popping up every time you open the software, you can click "Repair" next to one of the two options here.
 > ![alt text](image-23.png)
 > Next, select "vscode" for both "Mergetool" and "Difftool" (or if you know what you're doing, one of the other options).
 > ![alt text](image-24.png)
@@ -216,7 +218,7 @@ If you bought your domain name through something like Namecheap, you'll have a l
 
 ![alt text](image.png)
 
-> ***Sidenote:*** You can also use your domain name instead of the IP address.
+> _**Sidenote:**_ You can also use your domain name instead of the IP address.
 
 2. Now, we're going to go back to PuTTY. In the blank space, you want to put "USERNAME@IPADDRESS". In my example, I put "perabibb@15.204.53.162".
 
@@ -331,8 +333,8 @@ If it was successful, it'll look like this:
 
 ![alt text](image-41.png)
 
-21. Now we will type in `git pull hub main`. This will copy the files from `site_hub.git` into `www`. It should look like this when it's done: 
-![alt text](image-42.png)
+21. Now we will type in `git pull hub main`. This will copy the files from `site_hub.git` into `www`. It should look like this when it's done:
+    ![alt text](image-42.png)
 
 22. If you type in `ls`, you should see all of the files needed for Lorekeeper!
 
@@ -341,6 +343,7 @@ If it was successful, it'll look like this:
 23. Now we need to configure the **git hooks**. These will automatically sync the code between `site_hub.git` and `www`, so we don't need to do it manually every time.
 
 Type in these two commands:
+
 ```
 cd .git/hooks
 nano post-commit
@@ -516,7 +519,7 @@ Options +SymLinksIfOwnerMatch
 ```
 
 17. Save this file by clicking the icon in the top right corner. Then close it by clicking the "X".
-![alt text](image-67.png)
+    ![alt text](image-67.png)
 
 18. Apache now knows how to serve our files.
 
@@ -599,6 +602,7 @@ The home stretch! We are now going to create an environment (.env) file that sto
 4. This will open up another text editor. We are going to paste many lines into this file:
 
 First, we will paste this block.
+
 ```
 APP_NAME=SiteName
 APP_ENV=production
@@ -606,6 +610,7 @@ APP_KEY=
 APP_DEBUG=false
 APP_URL=http://yourdomain.com
 ```
+
 - Do not include any spaces in the value for APP_NAME
 - Make sure APP_DEBUG is set to `false`!
 - Set the value of APP_URL to your site's domain name
@@ -616,6 +621,7 @@ DEVIANTART_ACCOUNT=daaccount
 
 LOG_CHANNEL=stack
 ```
+
 - CONTACT_ADDRESS can be whatever email you're comfortable being public.
 - DEVIANTART_ACCOUNT can be left blank if you do not have a dA account for the ARPG/species.
 
@@ -627,6 +633,7 @@ DB_DATABASE=databasename
 DB_USERNAME=databaseusername
 DB_PASSWORD=databasepassword
 ```
+
 - Change `databasename` to the database you created earlier. Ours is `perabibb_lorekeeper`.
 - Change `databaseusername` to the database user your created earlier. Ours is `perabibb_dbuser`.
 - Change `databasepassword` to the password for the user you created earlier.
@@ -642,6 +649,7 @@ REDIS_HOST=127.0.0.1
 REDIS_PASSWORD=null
 REDIS_PORT=6379
 ```
+
 - This info is generic and can be left as-is.
 
 ```
@@ -653,6 +661,7 @@ MAIL_PASSWORD=emailpassword
 MAIL_FROM_ADDRESS=emailfromaddress
 MAIL_FROM_NAME="name"
 ```
+
 - Change `emailusername` to the email username you recorded earlier. Ours is `noreply@perabibble.com`.
 - Change `emailpassword` to the email password your recorded earlier.
 - Change `emailfromaddress` to the same as the username.
@@ -672,9 +681,11 @@ PUSHER_APP_CLUSTER=
 MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
 MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 ```
+
 - This information is also generic and can be left blank.
 
 **At the end, add any social media authentication methods you have created.** For example, for deviantArt, mine might be:
+
 ```
 DEVIANTART_CLIENT_ID=1234567890
 DEVIANTART_CLIENT_SECRET=agsdbhjhjfjksjs
@@ -687,7 +698,7 @@ When done, the file will look something like this:
 
 5. Save and close this file.
 
-6. Go back to PuTTY. You should still be in your `www` directory, or navigate to it using `cd`. 
+6. Go back to PuTTY. You should still be in your `www` directory, or navigate to it using `cd`.
 
 7. Type in `php artisan key:generate`. If your .env file is configure successfully, it should look like this:
 
@@ -723,10 +734,10 @@ When done, the file will look something like this:
 
 2. Scroll down to "Add New Cron Job". From the dropdown, select "Once Per Minute". Don't add an email address unless you really like spam.
 
-In the "Command" box, type in the following, replacing `yourdomain.com` with your site's domain name: 
+In the "Command" box, type in the following, replacing `yourdomain.com` with your site's domain name:
 
 ```
-cd ~/public_html/yourdomain.com/www && /usr/local/bin/ea-php82 artisan schedule:run >> /dev/null 2>&1 
+cd ~/public_html/yourdomain.com/www && /usr/local/bin/ea-php82 artisan schedule:run >> /dev/null 2>&1
 ```
 
 ![alt text](image-95.png)

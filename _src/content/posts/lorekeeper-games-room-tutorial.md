@@ -2,7 +2,7 @@
 title: Developing for the Lorekeeper Games Room Extension
 description: How to create games for the Lorekeeper Games Room extension.
 date: 2025-05-15
-tags: ["lorekeeper"]
+tags: ['lorekeeper']
 ---
 
 ### Extension Overview
@@ -10,6 +10,7 @@ tags: ["lorekeeper"]
 There are two types of games that can be added -- "Link" which simply adds a link to another page (such as if you wanted to list something like Higher or Lower in your games room) and "Game" which is a full-fledged game that allows utilization of the score submission features.
 
 Steps to follow for installing a game:
+
 1. Merge in the core games room extension
 2. Merge in game you wish to install
 3. In the Admin Panel, go to Data -> Games and create a new game.
@@ -74,6 +75,6 @@ API routes are debatably out of scope for this extension. You have a lot of opti
 
 ### Preparing the Game for Release
 
-**Do NOT include the Games Room extension in your branch.** Your game should be on a completely vanilla version of the most recent core v3. This is to prevent merge errors if I update the extension in the future. 
+**Do NOT include the Games Room extension in your branch.** Your game should be on a completely vanilla version of the most recent core v3. This is to prevent merge errors if I update the extension in the future.
 
 If all works as planned, there should be close to zero merge errors when installing a game. The only expected exception is a potential merge error in `config\lorekeeper\game_options.php` if multiple games are installed -- a similar problem happens with item tags (which that functionality is based off of).

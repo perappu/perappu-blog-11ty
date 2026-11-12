@@ -2,7 +2,7 @@
 title: MariaDB Galera Cluster with Load Balancing via HAProxy
 description: How to set up a MariaDB Galera Cluster with load balancing
 date: 2025-11-24
-tags: ["mariadb", "sysadmin"]
+tags: ['mariadb', 'sysadmin']
 ---
 
 For my [hosting services](/commission/lorekeeper/), I've been in the process of making them slowly more and more scalable. My latest endeavour to do that was to move from one DB server to a MariaDB Galera cluster.
@@ -11,7 +11,7 @@ In short, I wanted multiple DB servers that could semi-intelligently split the s
 
 ## Setting Up The Cluster
 
-I use Hetzner for my servers. I started by creating 3 separate Hetzner VPSs -- each named some variant of galera-1, etc. **Make sure they are all on the same private network, as we will be using private IP addresses where possible.** No matter how many you set up, make sure it's an odd number, in order to avoid this thing called the ["split-brain scenario"](https://en.wikipedia.org/wiki/Split-brain_(computing)).
+I use Hetzner for my servers. I started by creating 3 separate Hetzner VPSs -- each named some variant of galera-1, etc. **Make sure they are all on the same private network, as we will be using private IP addresses where possible.** No matter how many you set up, make sure it's an odd number, in order to avoid this thing called the ["split-brain scenario"](<https://en.wikipedia.org/wiki/Split-brain_(computing)>).
 
 Follow whatever steps you prefer for setting up and securing a Linux VPS. I will be using Ubuntu in this guide, and we will be setting up the firewall as part of it, so you can skip that.
 
@@ -21,7 +21,8 @@ In theory, you could containerize all of these, but I decided not to because I w
 
 Mercifully, the [MariaDB docs](https://mariadb.com/docs/galera-cluster/galera-cluster-quickstart-guides/mariadb-galera-cluster-guide) are pretty decent when it comes to how to configure a Galera cluster, so this is mostly pulled from there.
 
-### 1. Synchronize Clocks 
+### 1. Synchronize Clocks
+
 Firstly, you will need to synchronize the clocks on the servers. This is done via something called NTP.
 Setting up NTP as the time synchronization on Ubuntu is very easy:
 
@@ -51,11 +52,13 @@ sudo apt update
 ```
 
 Then install all the Galera packages:
+
 ```
 sudo apt install mariadb-server mariadb-client galera-4 -y
 ```
 
 And perform a secure installation:
+
 ```
 sudo mariadb-secure-installation
 ```
@@ -65,6 +68,7 @@ sudo mariadb-secure-installation
 **Update 11/05/2036:** It does appear now that the root password is replicated. I believe there are things you can do to prevent this, but I have left it be for now.
 
 Answer YES to:
+
 - Remove anonymous users
 - Disable remote root login
 - Remove test database
@@ -129,6 +133,7 @@ wsrep_node_address="NODEIPADDRESS" # This node's own private IP address
 ```
 
 These are the values you need to change:
+
 - `wsrep_cluster_name` - The name of your cluster. This must be identical on all nodes.
 - `wsrep_cluster_address` - More or less a comma separated list of your nodes. Example value: `wsrep_cluster_address="gcomm://10.1.0.4,10.1.0.6,10.1.0.7"`
 - `wsrep_node_name` - A unique name for this node. "node1", "node2", etc is sufficient.
@@ -149,11 +154,13 @@ Save the file, and once you have filled it out on each server, move onto the nex
 Stop all nodes with `sudo systemctl stop mariadb` if you haven't already.
 
 Then, on the **first node only**, start the cluster with:
+
 ```
 sudo galera_new_cluster
 ```
 
 Next, on all other nodes, start the service **normally**:
+
 ```
 sudo systemctl start mariadb
 ```
@@ -198,6 +205,7 @@ Switch back to your proxy server. We're going to configure the firewall on it.
 If you plan to connect to your DB via a domain name (such as sql.yourdomain.com), then you **can not** use Hetzner's firewall. It will prevent the domain name from resolving correctly.
 
 These are the UFW rules which worked for me:
+
 ```
 sudo ufw allow OpenSSH
 sudo ufw allow from WEBSERVERIPADDRESS to any port 3306
@@ -216,11 +224,13 @@ sudo systemctl start haproxy
 ```
 
 Next, we will edit the HAProxy config file:
+
 ```
 sudo nano /etc/haproxy/haproxy.cfg
 ```
 
 At the **bottom of the file**, we will be adding these lines. Edit with your private IP addresses for each node:
+
 ```
 frontend galera_cluster_frontend
         mode tcp
@@ -239,6 +249,7 @@ backend galera_cluster_backend
 ```
 
 Save this file, and restart HAProxy to make the changes:
+
 ```
 sudo systemctl start haproxy
 ```
@@ -250,6 +261,7 @@ Many guides will now configure stats for HAProxy. I decided not to, because I di
 For completely inexplicable reasons, I find that when running `apt update && apt upgrade` it will sometimes break MariaDB. This happens even when MariaDB is stopped.
 
 To fix this, I have found this command works:
+
 ```
 sudo apt install --reinstall mariadb-server-galera
 ```
@@ -258,7 +270,7 @@ After that, the node should connect as normal.
 
 ## Conclusion
 
-In your web application, you should now be able to use the IP address of your HAProxy server just as if it were a normal database on port 3306. 
+In your web application, you should now be able to use the IP address of your HAProxy server just as if it were a normal database on port 3306.
 
 Optionally, you can set the DNS records of a domain to point towards the HAProxy server and connect that way. If your web server is in the same private network, you could also simply use the private IP address of the HAProxy server to connect. Since we bound a wildcard to 3306, the sky's the limit.
 

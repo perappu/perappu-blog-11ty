@@ -1,71 +1,78 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/Primer/19.1.1/tooltips.min.css");
-@import "tailwindcss";
+@import url('https://cdnjs.cloudflare.com/ajax/libs/Primer/19.1.1/tooltips.min.css');
+@import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 
 @layer base {
-  h1 {
-    @apply no-underline;
-  }
+    h1 {
+        @apply no-underline;
+    }
 
-  h2, h3, h4, h5 {
-    border-bottom: 1px solid #94a3b8;
-    padding-bottom: 3px;
-    overflow: auto;
-  }
+    h2,
+    h3,
+    h4,
+    h5 {
+        border-bottom: 1px solid #94a3b8;
+        padding-bottom: 3px;
+        overflow: auto;
+    }
 
-  h4, h5 {
-    @apply mx-3 font-bold text-lg;
-  }
+    h4,
+    h5 {
+        @apply mx-3 font-bold text-lg;
+    }
 
-  a, .prose a {
-    @apply decoration-slate-400;
-    @apply underline;
-  }
+    a,
+    .prose a {
+        @apply decoration-slate-400;
+        @apply underline;
+    }
 
-  code {
-    @apply bg-black/25 p-1 rounded-lg;
-  }
+    code {
+        @apply bg-black/25 p-1 rounded-lg;
+    }
 
-  a:hover, .prose a:hover {
-    @apply decoration-slate-200;
-  }
+    a:hover,
+    .prose a:hover {
+        @apply decoration-slate-200;
+    }
 
-  ul {
-    @apply mx-5;
-  }
+    ul {
+        @apply mx-5;
+    }
 
-  li {
-    @apply m-0;
-  }
+    li {
+        @apply m-0;
+    }
 
-  hr {
-    @apply !border-gray-200 ;
-  }
+    hr {
+        @apply !border-gray-200;
+    }
 
-  table {
-    @apply !w-11/12 !mx-5 !px-5;
-  }
+    table {
+        @apply !w-11/12 !mx-5 !px-5;
+    }
 
-  .prose code::before, .prose code::after {
-    content: "" !important;
-  }
+    .prose code::before,
+    .prose code::after {
+        content: '' !important;
+    }
 
-  .prose img {
-    margin: auto;
-    max-height: 250px;
-    width: auto;
-  }
+    .prose img {
+        margin: auto;
+        max-height: 250px;
+        width: auto;
+    }
 
-  .prose blockquote {
-    font-weight: initial;
-    font-style: normal;
-    quotes: "" "" "" "";
-    border-color: white;
-    color: var(--tw-prose-body);
-  }
+    .prose blockquote {
+        font-weight: initial;
+        font-style: normal;
+        quotes: '' '' '' '';
+        border-color: white;
+        color: var(--tw-prose-body);
+    }
 
-  #topBtn {
-    display: none; /* Hidden by default */
-    cursor: pointer; /* Add a mouse pointer on hover */
-  }
+    #topBtn {
+        display: none; /* Hidden by default */
+        cursor: pointer; /* Add a mouse pointer on hover */
+    }
 }

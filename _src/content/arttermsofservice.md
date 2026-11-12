@@ -8,8 +8,9 @@ permalink: /commission/art/index.html
 Hereafter, the person purchasing my services is referred to as "you", "commissioner", or "the commissioner".
 
 #### Changelog
+
 - **3/7/2025**
-  - Update TOS link to this page
+    - Update TOS link to this page
 
 #### 1. General
 
@@ -18,7 +19,7 @@ Hereafter, the person purchasing my services is referred to as "you", "commissio
     - **You must specify in your initial request if you wish for your commission to be private.** Private commissions may be subject to an additional charge.
 3. I will not use any PII (<a href="https://www.dol.gov/general/ppii">personal identifiable information</a>) for any use other than as required to provide the services requested.
     - PII is defined as such by the US Department of Labor:
-      - Any representation of information that permits the identity of an individual to whom the information applies to be reasonably inferred by either direct or indirect means. Further, PII is defined as information: (i) that directly identifies an individual (e.g., name, address, social security number or other identifying number or code, telephone number, email address, etc.) or (ii) by which an agency intends to identify specific individuals in conjunction with other data elements, i.e., indirect identification. (These data elements may include a combination of gender, race, birth date, geographic indicator, and other descriptors). Additionally, information permitting the physical or online contacting of a specific individual is the same as personally identifiable information. This information can be maintained in either paper, electronic or other media.
+        - Any representation of information that permits the identity of an individual to whom the information applies to be reasonably inferred by either direct or indirect means. Further, PII is defined as information: (i) that directly identifies an individual (e.g., name, address, social security number or other identifying number or code, telephone number, email address, etc.) or (ii) by which an agency intends to identify specific individuals in conjunction with other data elements, i.e., indirect identification. (These data elements may include a combination of gender, race, birth date, geographic indicator, and other descriptors). Additionally, information permitting the physical or online contacting of a specific individual is the same as personally identifiable information. This information can be maintained in either paper, electronic or other media.
 4. In turn, **you may not share my personal identifiable information for any reason**.
 5. The right to use my work is not an endorsement in any way.
 
@@ -36,12 +37,13 @@ Hereafter, the person purchasing my services is referred to as "you", "commissio
 
 1.  I will provide a fair and reasonable timeline for when your work will be completed, and I will provide an advance warning if the expected timeframe changes.
     - You may ask for updates at any time. However, repeated or incessant requests within a short timeframe will result in your commission being cancelled and refunded.
-3. I check my work messages between 4 and 5 PM CST on weekdays, and sporadically on Saturday (typically early in the morning). I typically don't work on Sundays. I'll try to get back to you as soon as possible, but I work 40 hour full-time day job so responses may be delayed. Expect me to get back to you within 1-2 days, excluding vacations or other time off. Please be reasonable -- this is my side job, and I support a family.
-4.  Due to my schedule, "working" hour availability may be sporadic. You don't need to be available exactly at the same time I'm working -- however, you must be comfortable with me messaging you status updates regardless of whether or not you are available at that very moment.
-6.  I reserve the right to deny services at any time. 
+2.  I check my work messages between 4 and 5 PM CST on weekdays, and sporadically on Saturday (typically early in the morning). I typically don't work on Sundays. I'll try to get back to you as soon as possible, but I work 40 hour full-time day job so responses may be delayed. Expect me to get back to you within 1-2 days, excluding vacations or other time off. Please be reasonable -- this is my side job, and I support a family.
+3.  Due to my schedule, "working" hour availability may be sporadic. You don't need to be available exactly at the same time I'm working -- however, you must be comfortable with me messaging you status updates regardless of whether or not you are available at that very moment.
+4.  I reserve the right to deny services at any time.
     - If money has been exchanged, you will be refunded for any work not performed.
 
 #### 4. Art Process
+
 1. Commissions that are **not** artistic liberty, Skeb-style, or "surprise me" will have approval stages.
     - As I work in a variety of mediums and methods, these approval stages may vary. At minimum, sketch is available for approval.
     - Large edits (such as change in pose, character, etc) **must** be requested at the sketch stage. Small edits are permitted at later stages.
@@ -52,6 +54,7 @@ Hereafter, the person purchasing my services is referred to as "you", "commissio
 <div class="text-center">
 
 ##### Any questions? Feel free to ask!
+
 I try to be as transparent as possible and I'm happy to elaborate on anything if desired. I look forward to working with you!
 
 If you have been sent my ToS in response to an inquiry, please sent me the word "birds" to indicate you have read and agree to these terms.

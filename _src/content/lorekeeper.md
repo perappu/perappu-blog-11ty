@@ -9,13 +9,14 @@ Thank you for considering me for your developer work! ❤️ I'd love to work wi
 
 #### ✨NEW✨ Shared Hosting
 
-I now offer an __alternative to DreamHost__.
+I now offer an **alternative to DreamHost**.
 
-This hosting is an uncomplicated **$10/month** ($120 yearly) and is a great option for people who would like greater performance and support than what DreamHost offers, but still wish to manage their own code. 
+This hosting is an uncomplicated **$10/month** ($120 yearly) and is a great option for people who would like greater performance and support than what DreamHost offers, but still wish to manage their own code.
 
 Unlike DreamHost and other hosting options, the plan will not magically grow more expensive each year -- I am committed to staying at the $10/month price point.
 
 It comes with:
+
 - Unlimited bandwidth
 - 25 GB of storage (More can be added at a rate of $2 per 10GB)
 - Free transactional emails
@@ -30,19 +31,20 @@ A setup guide can be found [here](/posts/perabyte-hosting-setup/). Please contac
 
 #### Managed Hosting
 
-For people who prefer a more "hands-off approach" to Lorekeeper, I provide **managed hosting**. 
+For people who prefer a more "hands-off approach" to Lorekeeper, I provide **managed hosting**.
 
-What does this mean? I can do *nearly everything* coding-wise for your site.
+What does this mean? I can do _nearly everything_ coding-wise for your site.
 
 I can:
-* Maintain all aspects of your hosting set up -- domain name, files, images, database, sendgrid...
-* Keep your server secured
-* Keep your site updated to the newest version of LK v3
-* Install & edit extensions
-* Turn mock-up website layouts into CSS/HTML
-* Move your website to my managed hosting
-* Provide general dev work for existing websites
-* ...and more depending on your needs!
+
+- Maintain all aspects of your hosting set up -- domain name, files, images, database, sendgrid...
+- Keep your server secured
+- Keep your site updated to the newest version of LK v3
+- Install & edit extensions
+- Turn mock-up website layouts into CSS/HTML
+- Move your website to my managed hosting
+- Provide general dev work for existing websites
+- ...and more depending on your needs!
 
 **If you're looking for a permanent coder to have on staff, then this what you're looking for!**
 
@@ -54,26 +56,26 @@ More storage can be added at any time at the rate of $2.00 per 10GB. You can pay
 
 These are the services covered by managed hosting:
 
-* Basic maintenance
-* Updates to LK
-* Updates to extensions*
-* Bug fixes (&quot;It suddenly broke and I don't know how to fix it&quot;) and other small changes (see TOS for details)
+- Basic maintenance
+- Updates to LK
+- Updates to extensions*
+- Bug fixes (&quot;It suddenly broke and I don't know how to fix it&quot;) and other small changes (see TOS for details)
 
 <small>* Within reason. Some extensions are very large and may take additional dev time and/or compatibility patches to update.</small>
 
 #### Which Hosting is Best for Me?
 
-| Shared Hosting is best for...                                                                          | Managed Hosting is best for...                          |
-|--------------------------------------------------------------------------------------------------------|---------------------------------------------------------|
-| - People who are comfortable working with PHP | - People who don't want to worry about code             |
-| - People who can be their own permanent coder                                                          | - People who need a permanent coder                     |
-| - People who can run their own local environment on their own computer                                 | - People who don't have powerful home computers/laptops |
+| Shared Hosting is best for...                                          | Managed Hosting is best for...                          |
+| ---------------------------------------------------------------------- | ------------------------------------------------------- |
+| - People who are comfortable working with PHP                          | - People who don't want to worry about code             |
+| - People who can be their own permanent coder                          | - People who need a permanent coder                     |
+| - People who can run their own local environment on their own computer | - People who don't have powerful home computers/laptops |
 
 To summarize: You **will need to run your own code for shared hosting**, but there are **no requirements for managed hosting**.
 
 ### Setup Services
 
-I provide setups either on Hetzner or for either of my hosting options. I do not do Dreamhost setups. 
+I provide setups either on Hetzner or for either of my hosting options. I do not do Dreamhost setups.
 
 #### New Sites
 
@@ -84,9 +86,11 @@ Extensions can be added during site setup at **$40/hr**. Depending on your exten
 I try to be extremely fair with what counts as billable time. I will send you messages periodically throughout the development process, so you are aware exactly when and what I'm working on! I can explain as much or as little of the process as you'd like.
 
 #### Existing Sites
+
 If you have an existing LK site and would like to transfer to my hosting services, I'm happy to help! I charge $40/hour with a one hour minimum charge. Most site transitions can be done within 1-2 hours. You will need to be comfortable providing any necessary logins -- for Dreamhost, this is usually your account and PuTTy logins.
 
 ### General Work
+
 I can also help with general dev work at my standard $40/hour charge. This can include adding extensions, updating your site, etc.
 
 <div class="text-center">

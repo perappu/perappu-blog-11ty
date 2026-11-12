@@ -3,7 +3,7 @@ title: Lorekeeper Setup - Perabyte Hosting
 description: How to setup Lorekeeper on Perabyte Hosting
 permalink: /posts/perabyte-hosting-setup/
 date: 2025-12-19
-tags: ["lorekeeper", "laravel"]
+tags: ['lorekeeper', 'laravel']
 ---
 
 ## Introduction
@@ -25,13 +25,14 @@ This guide will walk you through on how to set up this hosting by yourself. **Yo
 
 ## Buying a Domain Name
 
-**First, you will need a domain name.** You can think of this as your home address -- a domain name is a label that tells the browser where your website is located, and __not__ the website itself.
+**First, you will need a domain name.** You can think of this as your home address -- a domain name is a label that tells the browser where your website is located, and **not** the website itself.
 
 Since I can't offer domain privacy services, I do not offer domain names through Perabyte. I highly recommend [Namecheap](https://www.namecheap.com). **For ease, this guide will assume you are using Namecheap,** but you can use any registrar you want. I've also heard good things about [Porkbun](https://porkbun.com).
 
 Spend some time browsing for the domain name you'd like, and once you've picked it out, purchase it!
 
 Some notes:
+
 - **Make sure you enable any domain privacy services.** Any good registrar will offer privacy for free. The owner of any given domain is freely available information on the internet. By enabling domain privacy, you ensure that you aren't sharing your home address to the rest of the internet!
 - **Don't change any DNS settings for now.** We'll cover how to do that later.
 
@@ -78,9 +79,9 @@ You will be working with **two** websites over the course of this guide. The bil
 [<img src="/content/img/perabyte-setup/control-panel-setup-1.png" alt="alt text">](/content/img/perabyte-setup/control-panel-setup-1.png){data-fslightbox data-type="image"}
 
 > If the email failed to arrive at all, that's OK! Log into [billing.perabyte.host](https://billing.perabyte.host) and click on "Services" then click "Manage" next to your hosting. Scroll down and you will find a place where you can reset your password, as well as view your assigned username and a link to the control panel.
-> 
+>
 > [<img src="/content/img/perabyte-setup/control-panel-setup-2.png" alt="alt text">](/content/img/perabyte-setup/control-panel-setup-2.png){data-fslightbox data-type="image"}
-> 
+>
 > [<img src="/content/img/perabyte-setup/control-panel-setup-3.png" alt="alt text">](/content/img/perabyte-setup/control-panel-setup-3.png){data-fslightbox data-type="image"}
 
 2. Go to the website listed as your "Control Panel URL". In my case, that's `shared1.perabyte.host`. You should be presented with this screen. Enter the username and password provided in the email.
@@ -107,8 +108,8 @@ You will be working with **two** websites over the course of this guide. The bil
 
 [<img src="/content/img/perabyte-setup/control-panel-setup-9.png" alt="alt text">](/content/img/perabyte-setup/control-panel-setup-9.png){data-fslightbox data-type="image"}
 
-> If you're unsure what is meant by **public OpenSSH key**, it's the public key that begins with `ssh-rsa`, `ecdsa-sha2`, or similar. 
-> On Windows, you can find it by opening PuTTYgen and copying the text found in the "Public key for pasting into OpenSSH authorized_keys file" section. 
+> If you're unsure what is meant by **public OpenSSH key**, it's the public key that begins with `ssh-rsa`, `ecdsa-sha2`, or similar.
+> On Windows, you can find it by opening PuTTYgen and copying the text found in the "Public key for pasting into OpenSSH authorized_keys file" section.
 > [<img src="/content/img/perabyte-setup/control-panel-setup-10.png" alt="alt text">](/content/img/perabyte-setup/control-panel-setup-10.png){data-fslightbox data-type="image"}
 
 8. You should see a success message after it saves:
@@ -129,7 +130,7 @@ Next, we are going to create a few things within the control panel.
 
 3. Enter in a name for the database, as well as a username and password for the database user. **Make the password different from your control panel password. Then, save this database name, username, password somewhere safe.** Enter in your email and the credentials will be automatically sent to you, but record them somewhere else as well.
 
-> Please note the actual database name and username will be __automatically prefixed with your username__.
+> Please note the actual database name and username will be **automatically prefixed with your username**.
 > I have entered `db` and `user` as the name and username, which means the actual database name is `perabib9_db` and a username of `perabib9_user`. These highlighted values in the picture below are the ones you want to save.
 
 [<img src="/content/img/perabyte-setup/creating-db-3.png" alt="alt text">](/content/img/perabyte-setup/creating-db-3.png){data-fslightbox data-type="image"}
@@ -148,13 +149,13 @@ Next, we are going to create a few things within the control panel.
 
 [<img src="/content/img/perabyte-setup/image-23.png" alt="alt text">](/content/img/perabyte-setup/image-23.png){data-fslightbox data-type="image"}
 
-3. You will create another login here. I like to make the username "noreply" as it indicates to users that the email inbox will not be checked. 
+3. You will create another login here. I like to make the username "noreply" as it indicates to users that the email inbox will not be checked.
 
 **Before we click save, we are going to check the advanced options.** Check "Discard all mail". Leave everything else as-is.
 
 [<img src="/content/img/perabyte-setup/image-24.png" alt="alt text">](/content/img/perabyte-setup/image-24.png){data-fslightbox data-type="image"}
 
-You can again put in your email to have the credentials sent to you, but you should still **save these to a safe place.** 
+You can again put in your email to have the credentials sent to you, but you should still **save these to a safe place.**
 
 4. Click "Save" and you should see a success message:
 
@@ -174,22 +175,21 @@ You can again put in your email to have the credentials sent to you, but you sho
 
 [<img src="/content/img/perabyte-setup/image-29.png" alt="alt text">](/content/img/perabyte-setup/image-29.png){data-fslightbox data-type="image"}
 
-
 ## Setting Up The Server
 
 Finally, it's time to get to the good stuff! We're going to **put the code on the server**.
 
 ### Connecting via SSH
 
-1. Open up PuTTY or your other favorite SSH tool. Load in your SSH key and connect to your server via `YOURUSERNAME@YOURSERVERURL`.  For example, I am using PuTTY and my connection is `perabib9@shared1.perabyte.host`.
+1. Open up PuTTY or your other favorite SSH tool. Load in your SSH key and connect to your server via `YOURUSERNAME@YOURSERVERURL`. For example, I am using PuTTY and my connection is `perabib9@shared1.perabyte.host`.
 
 [<img src="/content/img/perabyte-setup/image-31.png" alt="alt text">](/content/img/perabyte-setup/image-31.png){data-fslightbox data-type="image"}
 
 > For PuTTY, you will need to have loaded in your key in the left side menu before you can connect. To do this, go to Connection -> SSH -> Auth -> Credentials, and select your .ppk file.
-[<img src="/content/img/perabyte-setup/image-30.png" alt="alt text">](/content/img/perabyte-setup/image-30.png){data-fslightbox data-type="image"}
+> [<img src="/content/img/perabyte-setup/image-30.png" alt="alt text">](/content/img/perabyte-setup/image-30.png){data-fslightbox data-type="image"}
 
 > You may see a warning when connecting for the first time. **Click "yes", "accept", or whatever equivalent for your SSH client.**
-[<img src="/content/img/perabyte-setup/image-32.png" alt="alt text">](/content/img/perabyte-setup/image-32.png){data-fslightbox data-type="image"}
+> [<img src="/content/img/perabyte-setup/image-32.png" alt="alt text">](/content/img/perabyte-setup/image-32.png){data-fslightbox data-type="image"}
 
 2. If your SSH key is properly configured, you should have logged in automatically. You will see a screen like this:
 
@@ -234,6 +234,7 @@ Instead of typing in `/web/YOURDOMAIN.COM/public_html/YOURDOMAIN.COM`, now we ca
 ```bash
 mkdir ~/YOURDOMAIN.COM/www
 ```
+
 ```bash
 mkdir ~/YOURDOMAIN.COM/site_hub.git
 ```
@@ -247,9 +248,11 @@ If the commands were successful, there will be no feedback. For example:
 ```bash
 cd ~/YOURDOMAIN.COM/site_hub.git
 ```
+
 ```bash
 git config --global init.defaultBranch main
 ```
+
 ```bash
 git --bare init
 ```
@@ -263,6 +266,7 @@ git --bare init
 ```bash
 cd hooks
 ```
+
 ```bash
 nano post-update
 ```
@@ -309,6 +313,7 @@ chmod +x post-update
 ```bash
 cd ~/YOURDOMAIN.COM/www
 ```
+
 ```bash
 git init
 ```
@@ -322,6 +327,7 @@ For example:
 ```bash
 cd .git/hooks
 ```
+
 ```bash
 nano post-commit
 ```
@@ -413,6 +419,7 @@ It should look like this:
 ```bash
 cd ~/YOURDOMAIN.COM/www
 ```
+
 ```bash
 ls
 ```
@@ -594,6 +601,7 @@ TOYHOUSE_CLIENT_SECRET=
 ```bash
 cd ~/YOURDOMAIN.COM/www
 ```
+
 ```bash
 nano .env
 ```
@@ -673,7 +681,7 @@ It should look like this when complete:
 php artisan setup-admin-user
 ```
 
-It will prompt for input four times. Type in your response, then press enter. 
+It will prompt for input four times. Type in your response, then press enter.
 
 - Username: Make this whatever you would like. Most people set it as just `admin`.
 - Email address: Make this a **real email address** as it will be needed to verify the account.
@@ -696,4 +704,3 @@ Congratulations! Your site should now be live. You can login with your admin acc
 - Remember to configure the [deviantART](https://lk-arpg.github.io/lk-docs/prerelease/guides/socmed/deviantart/) and/or [Toyhouse](https://lk-arpg.github.io/lk-docs/prerelease/guides/socmed/toyhouse/) authentication/verification if you haven't already. Always run `php artisan optimize` after making changes to your .env file!
 - You can start reading about the different features Lorekeeper has in the "Features" section of the [official documentation](https://lk-arpg.github.io/lk-docs/prerelease/). Typically, you will want to start with entering Rarities and Character Categories, as those are required by most other features.
 - You can also start thinking about making changes to your site's code. To change your site's name from the default "Lorekeeper", you will need to edit the file `config\lorekeeper\settings.php`. Use this to practice committing a change to SourceGit and push the change to your site!
-

@@ -2,7 +2,7 @@
 title: Lorekeeper Sysadmin Quest
 description: How I developed my infrastructure for running 10+ unique Laravel environments.
 date: 2024-11-02
-tags: ["lorekeeper", "laravel", "sysadmin"]
+tags: ['lorekeeper', 'laravel', 'sysadmin']
 ---
 
 ### Introduction
@@ -15,12 +15,13 @@ Because it's designed to be as simple as possible, most Lorekeeper servers (incl
 
 I manage over a dozen ubuntu servers for my Lorekeeper managed hosting service. As a solo dev, I’ve really started to struggle with scale -- individually SSHing into each server to execute bespoke commands isn’t cutting it anymore. Every time you do a deployment for Lorekeeper, you have to run a slew of commands (composer update, artisan migrate, add-site-settings, optimize usually twice, whatever other special commands required).
 
-It sucks and it's consuming all of my free time. I like providing this service, though, so I want to make it suck less. 
+It sucks and it's consuming all of my free time. I like providing this service, though, so I want to make it suck less.
 
 Here's the tale of me attempting that.
 
 #### A Word of Caution
-While I have written this guide in as plain language as possible, **this is not a beginner friendly guide**. 
+
+While I have written this guide in as plain language as possible, **this is not a beginner friendly guide**.
 
 You should have a basic understanding of networking and Linux systems. Full disclosure, I learned a lot of this on-the-fly. However, if you're coming from a basic Lorekeeper background, you may struggle with this content.
 
@@ -29,13 +30,16 @@ This isn't web developer or coding stuff -- this is system administrator stuff. 
 That said, I would love to see other people try their hand at this kind of thing. Please reach out if you try out a similar setup, and if you have any suggestions on how to improve this guide!
 
 #### What I Needed
+
 First, I had to solidify my actual needs. I needed a way to:
+
 - **Control all my servers from one place** (maintenance stuff like apt update & upgrade).
 - **Deploy my code** and execute all necessary deployment commands with (functionally) one or two button presses.
 - A safe and secure database solution with **regular backups** that I can easily access from one place.
 - A way to **serve transactional emails** for all sites in one place, rather than disparate (and fragile) Sendgrid/Mailersend/etc accounts.
 
 Also, for any of these solutions, I need it to be:
+
 - **Accessible from any of my computers**, and to anyone I might hire in the future to help me with my work.
 - **Self-hosted and open source/free** (I'm on a budget, and I want everything to be as centrally located as possible)
 
@@ -55,6 +59,7 @@ Let's address the security concern first. There's a lot of complicated solutions
 So, I settled on securing all of my services with [Cloudflare Zero Trust](https://developers.cloudflare.com/cloudflare-one/). Basically, that allows me to put everything behind a login page where I can specify whatever authentication requirements I want. Notably, you can do all this for free (aside from the buying a domain part).
 
 **Prerequisites:**
+
 - A Cloudflare account
 - A domain name that you either purchased via Cloudflare or is set up to use the Cloudflare nameservers
 - Some knowledge of how [Docker](https://www.docker.com) works -- enough to copy paste a docker compose and run it. Here's a [guide from Docker themselves](https://docs.docker.com/engine/install/ubuntu/) on how to install all the necessary stuff on Ubuntu.
@@ -81,6 +86,7 @@ networks:
 ```
 
 Create an .env file in the same directory as this docker-compose:
+
 ```
 TUNNEL_TOKEN=whatevercloudflaregaveyou
 ```
@@ -106,11 +112,11 @@ Next, you need to set up the access application. This is what does the actual se
 ![picture showing "any name" for application configuration and "your domain" for subdomain](/content/img/sysadmin-quest-cloudflare-app-config.png)
 
 3. You'll be presented with the "Add policies" screen. You can name your policy anything you'd like, and then select "Allow". Notably, we'll want to scroll down to "add additional rules".<br>
-  This is what I consider the most straightforward setup, that isn't reliant on authentication via other websites:
+   This is what I consider the most straightforward setup, that isn't reliant on authentication via other websites:
 
 ![alt text](/content/img/sysadmin-quest-cloudflare-allow-policy.png)
 
-4. Create your application, then go back to the Policies tab and select "Add a policy". 
+4. Create your application, then go back to the Policies tab and select "Add a policy".
 5. We want to create a second policy for our application, set as "Bypass" instead of "Allow". <br>
    Enter in the IP of your website, and any other IPs that your applications may need. (For example, I had a git forge behind a Cloudflare tunnel, and I needed to add GitHub's IPs to bypass the block.)
 
@@ -142,7 +148,7 @@ To save any future people 3-4 days of guesswork, I have a **"cloudflare-ansible-
 
 I ran Rundeck on its own droplet. I recommend you do the same. Rundeck hogs a lot of RAM, and adding additional services alongside it can complicate the tunnel setup. There's no downside and it can share the same access group as any of your other services. I have it on the $18/month Regular Intel from DigitalOcean, but you might be able to get away with less.
 
-The default login for Rundeck is `admin` with a password of `admin`. You can change this login by going into the container's shell and running [these commands](https://stackoverflow.com/a/41637114). 
+The default login for Rundeck is `admin` with a password of `admin`. You can change this login by going into the container's shell and running [these commands](https://stackoverflow.com/a/41637114).
 
 For some reason when you go to log in it won't actually redirect you. That's fine. Just go back to the base URL and you'll find yourself logged in.
 
@@ -190,7 +196,7 @@ After adding a node (or two), go to the "Command" section on the right hand side
 
 ![rundeck showing a successful response to the whoami command](/content/img/sysadmin-quest-rundeck-whoami.png)
 
-**As of this writing, __there is a major glitch with the current version of Rundeck__.** You can not execute sudo commands via bash without passwordless sudo. ___Do not set up passwordless sudo unless you know what you're doing.___ There are other workarounds, but they are highly technical. In the interim, you can use Ansible jobs to run sudo commands.
+**As of this writing, **there is a major glitch with the current version of Rundeck**.** You can not execute sudo commands via bash without passwordless sudo. _**Do not set up passwordless sudo unless you know what you're doing.**_ There are other workarounds, but they are highly technical. In the interim, you can use Ansible jobs to run sudo commands.
 
 #### Adding Rundeck Jobs
 
@@ -207,18 +213,18 @@ After adding a node (or two), go to the "Command" section on the right hand side
 ![rundeck nodes tab](/content/img/sysadmin-quest-rundeck-nodes-tab.png)
 
 3. **Open the second tab, "Workflow".** This is where you write your script.<br>
-  We don't need to input any options for this script, so you can skip the "Options" section. If you want to define user input, you do that from the "Options" section. For example, on my database backup script, I allow the user to define the name of the database they want to back up.
+   We don't need to input any options for this script, so you can skip the "Options" section. If you want to define user input, you do that from the "Options" section. For example, on my database backup script, I allow the user to define the name of the database they want to back up.
 
 4. Within the second tab, **scroll down to "Workflow" and click "Add a Step"**. We will want to add a "Inline Ansible Playbook".
 
 ![inline ansible playbook](/content/img/sysadmin-quest-ansible-playbook.png)
 
 5. Now to write our steps:
-   1. For the "Ansible binaries directory path", enter `/usr/bin`. The installation of Ansible was covered by the Dockerfile I linked previously.
-   2. Copy-paste the contents of [this file](https://github.com/perappu/lorekeeper-scripts/blob/main/ansible/server-maintenance.yaml) into the Playbook section.
-   3. For future jobs you write, you may need "Extra Variables". This essentially lets you turn Rundeck variables into variables that Ansible understands. We don't need it for this job, so we can skip it.
-   4. Under "SSH Connection", enter your Rundeck username as the SSH User. Select the associated key for SSH key stroage path.
-   5. Under "Privilege Escalation", check "Use become privilege escalation. Everything else can be technically left as default, except select your Rundeck account's password for "Privilege escalation Password Storage Path".
+    1. For the "Ansible binaries directory path", enter `/usr/bin`. The installation of Ansible was covered by the Dockerfile I linked previously.
+    2. Copy-paste the contents of [this file](https://github.com/perappu/lorekeeper-scripts/blob/main/ansible/server-maintenance.yaml) into the Playbook section.
+    3. For future jobs you write, you may need "Extra Variables". This essentially lets you turn Rundeck variables into variables that Ansible understands. We don't need it for this job, so we can skip it.
+    4. Under "SSH Connection", enter your Rundeck username as the SSH User. Select the associated key for SSH key stroage path.
+    5. Under "Privilege Escalation", check "Use become privilege escalation. Everything else can be technically left as default, except select your Rundeck account's password for "Privilege escalation Password Storage Path".
 
 6. You're done! Save the job and try to run it. Alternatively, you can schedule the job to run on a regular basis using the "Schedule" tab.
 
@@ -239,11 +245,13 @@ I went with [mailcow](https://mailcow.email) for my mail solution. Dockerized Ma
 Notably, mailcow is the only thing I didn’t put behind a Cloudflare tunnel (for now). The networking for email is fragile enough as-is, and Mailcow comes preloaded with a lot of the security things I'd be concerned about.
 
 #### Getting an IP
-**Don't even bother with DigitalOcean, Linode, or any of the other big players.** They're all blacklisted already. I personally ended up using [Lunanode](https://www.lunanode.com) because it was suggested by some random dude on Reddit, but I know others who have used [Mythic Beasts](https://www.mythic-beasts.com) to great success. 
+
+**Don't even bother with DigitalOcean, Linode, or any of the other big players.** They're all blacklisted already. I personally ended up using [Lunanode](https://www.lunanode.com) because it was suggested by some random dude on Reddit, but I know others who have used [Mythic Beasts](https://www.mythic-beasts.com) to great success.
 
 Basically, spin up the VPS and check the IP at [SpamRATS](https://www.spamrats.com). If it's blacklisted, either destroy the VPS and try again, or attempt a different provider.
 
 #### Mail DNS Records
+
 For the DNS records, I followed [this tutorial](https://hatembentayeb.hashnode.dev/mailcow-setting-up-a-full-featured-self-hosted-mail-server). Just in case that gets deleted at some point, I'll also document it here.
 
 **Note:** if your domain name is through Cloudflare, disable the proxy on ALL of these records. You want it to show a gray cloud and “DNS only” next to the domain.
@@ -252,29 +260,29 @@ The domain name I’m using in my examples is `placeholder.com` and an IP of `1.
 
 ##### Standard Records:
 
-| Type | Name | TTL | Value | Preference/Priority |
-| ---- | ---- | ---- | ----- | ----------------- |
-| A | mail | `default` | `1.2.3.4` | N/A |
-| CNAME | `autoconfig` | `default` | `mail.placeholder.com` | N/A |
-| CNAME |   `autodiscover`    |   `default`      | `mail.placeholder.com` |   N/A   |
-| MX | @ | `default` | `mail.placeholder.com` | 10 |
+| Type  | Name           | TTL       | Value                  | Preference/Priority |
+| ----- | -------------- | --------- | ---------------------- | ------------------- |
+| A     | mail           | `default` | `1.2.3.4`              | N/A                 |
+| CNAME | `autoconfig`   | `default` | `mail.placeholder.com` | N/A                 |
+| CNAME | `autodiscover` | `default` | `mail.placeholder.com` | N/A                 |
+| MX    | @              | `default` | `mail.placeholder.com` | 10                  |
 
 ##### Security Records:
 
-| Type | Name | TTL | Value |
-| ---- | ---- | ---- | ----- |
-| TXT | `@` | default | `v=spf1 ip4:1.2.3.4 -all` |
-| TXT | `dkim._domainkey` | default | **We will update this later after Mailcow gives us the value.** |
-| TXT | `_dmarc` | default | See below. |
+| Type | Name              | TTL     | Value                                                           |
+| ---- | ----------------- | ------- | --------------------------------------------------------------- |
+| TXT  | `@`               | default | `v=spf1 ip4:1.2.3.4 -all`                                       |
+| TXT  | `dkim._domainkey` | default | **We will update this later after Mailcow gives us the value.** |
+| TXT  | `_dmarc`          | default | See below.                                                      |
 
 ##### DMARC Records
 
 I think you only really need one DMARC record, but you can collect them like Pokémon if you want. My logic was that verifying my domain through a lot of different methods can’t hurt.
 
-- It’s a pain but you should sign up for [Dmarcian]("https://dmarcian.com/"). It might complain about your SPF records (it keeps complaining about mine…) but as long as you get the DMARC record from there, you’re good. 
-- [Postmark’s DMARC service](https://dmarc.postmarkapp.com/) is extremely easy to get rolling. 
-- I saw a dude on reddit suggest that adding things like Google’s [Postmaster tools](https://www.gmail.com/postmaster/) and Microsoft's [(SNDS) Smart Network Data Services](https://sendersupport.olc.protection.outlook.com/snds/) can help them trust your mail server, so I went ahead and signed up for those too. 
-  - SNDS doesn’t actually add a DMARC record, but it’s similar purpose so that’s why I mentioned it here. You’ll need to set up a postmaster@yourdomain.com account, so you can set up SNDS at the end.
+- It’s a pain but you should sign up for [Dmarcian]("https://dmarcian.com/"). It might complain about your SPF records (it keeps complaining about mine…) but as long as you get the DMARC record from there, you’re good.
+- [Postmark’s DMARC service](https://dmarc.postmarkapp.com/) is extremely easy to get rolling.
+- I saw a dude on reddit suggest that adding things like Google’s [Postmaster tools](https://www.gmail.com/postmaster/) and Microsoft's [(SNDS) Smart Network Data Services](https://sendersupport.olc.protection.outlook.com/snds/) can help them trust your mail server, so I went ahead and signed up for those too.
+    - SNDS doesn’t actually add a DMARC record, but it’s similar purpose so that’s why I mentioned it here. You’ll need to set up a postmaster@yourdomain.com account, so you can set up SNDS at the end.
 
 #### Installing Mailcow
 
@@ -283,8 +291,9 @@ Honestly, you should just check out [their official documentation](https://docs.
 More or less you'll just clone the repo, run the necessary `./generate_config.sh`, and then be well on your way. Please note that the tutorial I linked uses the "old" notation for docker compose. Just change any commands from `docker-compose` to `docker compose` without the dash.
 
 Some notes:
+
 - I lump everything under the same domain name. By default a single domain has 10 mailboxes, but you can increase that.
-- Make sure to update your DKIM record! It’s under System -> Configuration -> Options -> ARC/DKIM keys. Copy/paste the entire value into the DKIM record (starts with   `v=DKIM1;`) that we set up previously.
+- Make sure to update your DKIM record! It’s under System -> Configuration -> Options -> ARC/DKIM keys. Copy/paste the entire value into the DKIM record (starts with `v=DKIM1;`) that we set up previously.
 
 ### The Deployment Saga
 
