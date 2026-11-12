@@ -12,6 +12,7 @@ Finding the right webhosting is difficult, complicated, and expensive. For the L
 
 This guide will walk you through on how to set up this hosting by yourself. **You can click on any images in this guide to make them larger.**
 
+> [!CAUTION]
 > **If you encounter errors at any point in the guide, STOP.** Ask for help in the Lorekeeper Discord, or otherwise resolve the error before moving on. You risk messing up further if you continue despite an error.
 >
 > If you encounter issues specifically with the control panel/Perabyte itself, please create a ticket under the "Support" section on the billing website.
@@ -78,6 +79,7 @@ You will be working with **two** websites over the course of this guide. The bil
 
 [<img src="/content/img/perabyte-setup/control-panel-setup-1.png" alt="alt text">](/content/img/perabyte-setup/control-panel-setup-1.png){data-fslightbox data-type="image"}
 
+> [!WARNING] My email failed to arrive!
 > If the email failed to arrive at all, that's OK! Log into [billing.perabyte.host](https://billing.perabyte.host) and click on "Services" then click "Manage" next to your hosting. Scroll down and you will find a place where you can reset your password, as well as view your assigned username and a link to the control panel.
 >
 > [<img src="/content/img/perabyte-setup/control-panel-setup-2.png" alt="alt text">](/content/img/perabyte-setup/control-panel-setup-2.png){data-fslightbox data-type="image"}
@@ -108,6 +110,7 @@ You will be working with **two** websites over the course of this guide. The bil
 
 [<img src="/content/img/perabyte-setup/control-panel-setup-9.png" alt="alt text">](/content/img/perabyte-setup/control-panel-setup-9.png){data-fslightbox data-type="image"}
 
+> [!NOTE] What's my SSH key?
 > If you're unsure what is meant by **public OpenSSH key**, it's the public key that begins with `ssh-rsa`, `ecdsa-sha2`, or similar.
 > On Windows, you can find it by opening PuTTYgen and copying the text found in the "Public key for pasting into OpenSSH authorized_keys file" section.
 > [<img src="/content/img/perabyte-setup/control-panel-setup-10.png" alt="alt text">](/content/img/perabyte-setup/control-panel-setup-10.png){data-fslightbox data-type="image"}
@@ -130,6 +133,7 @@ Next, we are going to create a few things within the control panel.
 
 3. Enter in a name for the database, as well as a username and password for the database user. **Make the password different from your control panel password. Then, save this database name, username, password somewhere safe.** Enter in your email and the credentials will be automatically sent to you, but record them somewhere else as well.
 
+> [!IMPORTANT] Naming Your Database/Database User
 > Please note the actual database name and username will be **automatically prefixed with your username**.
 > I have entered `db` and `user` as the name and username, which means the actual database name is `perabib9_db` and a username of `perabib9_user`. These highlighted values in the picture below are the ones you want to save.
 
@@ -185,9 +189,11 @@ Finally, it's time to get to the good stuff! We're going to **put the code on th
 
 [<img src="/content/img/perabyte-setup/image-31.png" alt="alt text">](/content/img/perabyte-setup/image-31.png){data-fslightbox data-type="image"}
 
+> [!NOTE] Loading Your SSH Key
 > For PuTTY, you will need to have loaded in your key in the left side menu before you can connect. To do this, go to Connection -> SSH -> Auth -> Credentials, and select your .ppk file.
 > [<img src="/content/img/perabyte-setup/image-30.png" alt="alt text">](/content/img/perabyte-setup/image-30.png){data-fslightbox data-type="image"}
 
+> [!WARNING] "The host key is not cached"?
 > You may see a warning when connecting for the first time. **Click "yes", "accept", or whatever equivalent for your SSH client.**
 > [<img src="/content/img/perabyte-setup/image-32.png" alt="alt text">](/content/img/perabyte-setup/image-32.png){data-fslightbox data-type="image"}
 
@@ -197,6 +203,7 @@ Finally, it's time to get to the good stuff! We're going to **put the code on th
 
 3. Now we are going to type in some commands. **Enter all commands provided one by one.**
 
+> [!TIP]
 > If you are using PuTTY, **press right click instead of ctrl+v to paste text into the window**. It's a little strange, but you'll get used to it!
 
 4. First, we are going to create the folder Lorekeeper lives in. Our control panel serves all website files out `/web/YOURDOMAIN.COM/public_html`, so we need to create a folder in there.
@@ -223,6 +230,7 @@ Again, if the command is successful, there will be no feedback. For example:
 
 [<img src="/content/img/perabyte-setup/image-36.png" alt="alt text">](/content/img/perabyte-setup/image-36.png){data-fslightbox data-type="image"}
 
+> [!CAUTION] 
 > **If the text is red, that means an error occurred.** Check that you didn't make any typos, and ask the Lorekeeper Discord for help.
 
 Instead of typing in `/web/YOURDOMAIN.COM/public_html/YOURDOMAIN.COM`, now we can just type in `~/YOURDOMAIN.COM`!
@@ -391,6 +399,7 @@ If you were following the prerequisites, you already have a local copy of Loreke
 
 When you type in the Repository URL, it will automatically open a field for you to select your private SSH key. **You want to select your key formatted for OpenSSH, NOT the .ppk file.**
 
+> [!TIP] Exporting Your SSH Key
 > You can save a "formatted for OpenSSH" key in PuTTYgen by opening your .ppk file and selecting Conversions -> Export OpenSSH key.
 > [<img src="/content/img/perabyte-setup/image-49.png" alt="alt text">](/content/img/perabyte-setup/image-49.png){data-fslightbox data-type="image"}
 
@@ -594,6 +603,7 @@ TOYHOUSE_CLIENT_SECRET=
 - `MAIL_FROM_ADDRESS` is the full email address for the username we selected earlier. It is the same as the username. For example: `noreply@perabibble.com`
 - `MAIL_FROM_NAME` is the name you would like all emails to be sent by. For example: `"Perabibble"`
 
+> [!IMPORTANT] Social Media Configuration
 > Toyhouse and deviantART keys can be found by following the setup guides in the official Lorekeeper documentation. [Here](https://lk-arpg.github.io/lk-docs/prerelease/guides/socmed/toyhouse/) is the guide for Toyhouse, and [here](https://lk-arpg.github.io/lk-docs/prerelease/guides/socmed/deviantart/) is the guide for deviantART. **You will need to configure at least one social media authentication method.**
 
 2. Once you have filled out your .env file, go back to PuTTY/your SSH client. Type in the following:
@@ -608,6 +618,7 @@ nano .env
 
 **Copy paste all of the text we just edited here.**
 
+> [!TIP]
 > Remember that in PuTTY, it's right-click to paste!
 
 It will look like this when you're done:
@@ -625,6 +636,7 @@ php artisan key:generate
 It should look like this when complete:
 [<img src="/content/img/perabyte-setup/image-80.png" alt="alt text">](/content/img/perabyte-setup/image-80.png){data-fslightbox data-type="image"}
 
+> [!CAUTION] Application Key
 > You should only ever set the application key **once**. This command should be run once and never again, unless you encounter errors specific to the application key.
 
 4. We are going to run a command to make the settings from our .env file save into the cache. **Run the following command twice:**
@@ -653,6 +665,7 @@ It should look like this when completed:
 
 [<img src="/content/img/perabyte-setup/image-76.png" alt="alt text">](/content/img/perabyte-setup/image-76.png){data-fslightbox data-type="image"}
 
+> [!NOTE]
 > You may show a different list of migrations that ran. This was a copy of LK v3.0. **The important thing is that there were no errors.**
 
 2. We will next add all of the site settings required by Lorekeeper. **Run the following command once:**

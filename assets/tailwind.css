@@ -1,4 +1,7 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/Primer/19.1.1/tooltips.min.css');
+@import 'markdown-it-github-alerts/styles/github-colors-light.css';
+@import 'markdown-it-github-alerts/styles/github-colors-dark-media.css';
+@import 'markdown-it-github-alerts/styles/github-base.css';
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 
@@ -52,27 +55,29 @@
         @apply !w-11/12 !mx-5 !px-5;
     }
 
-    .prose code::before,
-    .prose code::after {
+    #topBtn {
+        display: none; /* Hidden by default */
+        cursor: pointer; /* Add a mouse pointer on hover */
+    }
+}
+
+@utility prose {
+    code::before,
+    code::after {
         content: '' !important;
     }
 
-    .prose img {
+    img {
         margin: auto;
         max-height: 250px;
         width: auto;
     }
 
-    .prose blockquote {
+    blockquote {
         font-weight: initial;
         font-style: normal;
         quotes: '' '' '' '';
         border-color: white;
         color: var(--tw-prose-body);
-    }
-
-    #topBtn {
-        display: none; /* Hidden by default */
-        cursor: pointer; /* Add a mouse pointer on hover */
     }
 }

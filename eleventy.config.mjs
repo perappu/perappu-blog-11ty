@@ -8,6 +8,7 @@ import markdownit from 'markdown-it'
 import anchor from 'markdown-it-anchor'
 import { DateTime } from 'luxon'
 import markdownItAttrs from 'markdown-it-attrs'
+import markdownItGitHubAlerts from 'markdown-it-github-alerts'
 import { eleventyImageTransformPlugin } from '@11ty/eleventy-img'
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
 import codeClipboard from 'eleventy-plugin-code-clipboard'
@@ -59,6 +60,7 @@ export default async function (eleventyConfig) {
                 rightDelimiter: '}',
                 allowedAttributes: [], // empty array = all attributes are allowed
             })
+            .use(markdownItGitHubAlerts)
     )
 
     eleventyConfig.setInputDirectory('_src')
@@ -87,6 +89,7 @@ export default async function (eleventyConfig) {
             imgAttributes: {
                 loading: 'lazy',
                 decoding: 'async',
+                "eleventy:ignore": "",
             },
             pictureAttributes: {},
             fallback: 'largest',

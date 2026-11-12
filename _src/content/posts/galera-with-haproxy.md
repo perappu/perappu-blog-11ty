@@ -17,6 +17,7 @@ Follow whatever steps you prefer for setting up and securing a Linux VPS. I will
 
 In theory, you could containerize all of these, but I decided not to because I wanted to utilize Hetzner's placement groups. This will try to place the VPSs away from eachother, so that if one goes down, it's less likely the others will as well.
 
+> [!NOTE]
 > I will also be assuming that you are using the latest version of MariaDB (or at least 10.4+) for everything. Please view their documentation if you require compatibility with old versions.
 
 Mercifully, the [MariaDB docs](https://mariadb.com/docs/galera-cluster/galera-cluster-quickstart-guides/mariadb-galera-cluster-guide) are pretty decent when it comes to how to configure a Galera cluster, so this is mostly pulled from there.
@@ -26,7 +27,7 @@ Mercifully, the [MariaDB docs](https://mariadb.com/docs/galera-cluster/galera-cl
 Firstly, you will need to synchronize the clocks on the servers. This is done via something called NTP.
 Setting up NTP as the time synchronization on Ubuntu is very easy:
 
-```
+```bash
 sudo timedatectl set-ntp no
 
 # Verify output of below command shows 'NTP service: inactive'
@@ -44,7 +45,7 @@ You will perform the following actions on **each node**.
 
 As MariaDB recommends, use their package repositories:
 
-```
+```bash
 sudo apt update
 sudo apt install dirmngr software-properties-common apt-transport-https ca-certificates curl -y
 curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | sudo bash
@@ -53,13 +54,13 @@ sudo apt update
 
 Then install all the Galera packages:
 
-```
+```bash
 sudo apt install mariadb-server mariadb-client galera-4 -y
 ```
 
 And perform a secure installation:
 
-```
+```bash
 sudo mariadb-secure-installation
 ```
 
@@ -82,6 +83,7 @@ Then `sudo systemctl stop mariadb` on **all nodes**.
 
 Instead of using UFW, I used Hetzner's firewall service. It's free and I can apply it to all nodes at the same time. The main advantage is that it's very easy limit those ports to only being accessible via the private network, where you'd otherwise need to try to keep one billion UFW rules consistent.
 
+> [!NOTE]
 > Please note that you will still need to use UFW for the proxy server, due to some issues that will be elaborated on later.
 
 Here are the ports needed for Galera, associated with various private IP addresses:
@@ -91,7 +93,7 @@ Make sure to allow all Galera servers to connect to eachother on 3306 TP, 4567 T
 
 If you want to use UFW instead or you're on a VPS that doesn't provide a firewall service, here are the ufw commands:
 
-```
+```bash
 sudo ufw allow OpenSSH # for obvious reasons, if you haven't already
 sudo ufw allow 3306/tcp  # MariaDB client connections
 sudo ufw allow 4567/tcp  # Galera replication (multicast and unicast)
@@ -108,7 +110,7 @@ On each node server, create a config file with `nano /etc/mysql/conf.d/galera.cn
 
 Include these contents in the file:
 
-```
+```conf
 [mysqld]
 # Basic MariaDB settings
 binlog_format=ROW
@@ -155,13 +157,13 @@ Stop all nodes with `sudo systemctl stop mariadb` if you haven't already.
 
 Then, on the **first node only**, start the cluster with:
 
-```
+```bash
 sudo galera_new_cluster
 ```
 
 Next, on all other nodes, start the service **normally**:
 
-```
+```bash
 sudo systemctl start mariadb
 ```
 
@@ -182,6 +184,7 @@ Now for the... _exciting_ part, and by that I mean the part that gave me the mos
 
 HAProxy is a very powerful yet obtuse piece of software, which we will be configuring to forward connections to our three databases in a round-robin pattern.
 
+> [!NOTE]
 > We don't use a Hetzner load balancer here because the Hetzner load balancer has no way of polling the SQL server specifically. HAProxy isn't very intelligent, but it contains a "sql-check" function that will at the very least check if the server is ready for connections before forwarding the traffic.
 
 Create a new VPS, and secure it in your preferred manner. It can be very small, because all it'll be doing is routing traffic.
@@ -192,7 +195,7 @@ First, we're actually going to go back to one of our node servers. Connect to an
 
 Now, we are going to add a DB user for HAProxy. This user does not need and absolutely should not have **any permissions**. It needs to be configured **without a password**. Hence, execute a simple:
 
-```
+```sql
 CREATE USER 'haproxy'@'PRIVATEPROXYSERVERIP';
 ```
 
@@ -206,7 +209,7 @@ If you plan to connect to your DB via a domain name (such as sql.yourdomain.com)
 
 These are the UFW rules which worked for me:
 
-```
+```bash
 sudo ufw allow OpenSSH
 sudo ufw allow from WEBSERVERIPADDRESS to any port 3306
 sudo ufw allow from PRIVATEWEBSERVERIPADDRESS to any port 3306
@@ -225,13 +228,13 @@ sudo systemctl start haproxy
 
 Next, we will edit the HAProxy config file:
 
-```
+```bash
 sudo nano /etc/haproxy/haproxy.cfg
 ```
 
 At the **bottom of the file**, we will be adding these lines. Edit with your private IP addresses for each node:
 
-```
+```yaml
 frontend galera_cluster_frontend
         mode tcp
         bind *:3306
@@ -250,7 +253,7 @@ backend galera_cluster_backend
 
 Save this file, and restart HAProxy to make the changes:
 
-```
+```bash
 sudo systemctl start haproxy
 ```
 
@@ -262,7 +265,7 @@ For completely inexplicable reasons, I find that when running `apt update && apt
 
 To fix this, I have found this command works:
 
-```
+```bash
 sudo apt install --reinstall mariadb-server-galera
 ```
 
