@@ -69,6 +69,7 @@ export default async function (eleventyConfig) {
         './assets/fslightbox.js': 'assets/fslightbox.js',
     })
     eleventyConfig.addPassthroughCopy({ './assets/favicon.ico': 'favicon.ico' })
+    eleventyConfig.addPassthroughCopy({ './assets/robots.txt': 'robots.txt' })
     eleventyConfig.addPassthroughCopy('./_src/content/img/**/**.*')
     eleventyConfig.addPassthroughCopy('./assets/img/**.*')
 
