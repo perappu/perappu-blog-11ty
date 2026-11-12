@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <base href="https://perappu.blog/">
+        <title>test</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel='stylesheet' href="/assets/tailwind.css" />
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+            body {
+                text-align: center;
+                text-transform: lowercase;
+            }
+            .container {
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div
+            class='w-full m-0 p-0 bg-cover bg-bottom border-b-2 border-slate-200'
+            style="background-image: url('/assets/img/cover.png'); background-position: center;"
+        >
+            <div
+                class='container mx-auto pt-10 text-center break-normal'
+            >
+                <div style="width: 75vw; min-height: 30vh; display: flex; align-items: center; flex-direction: column; justify-content: center;"
+                    class='
+                        bg-slate-700/90
+                        inline-block
+                        pb-5
+                        rounded-lg
+                        ring
+                        ring-slate-200
+                        shadow-lg
+                        shadow-slate-800
+                        mb-5
+                    '
+                >
+                <p class="text-xl md:text-2xl text-white text-shadow
+                            font-extrabold mb-2" style="text-decoration-color: var(--color-slate-400); text-decoration-line: underline;">
+                    perappu's blog
+                </p>
+                    <p
+                        class='
+                            text-white
+                            font-extrabold
+                            text-3xl
+                            text-shadow
+                            shadow-slate-800
+                            mb-2
+                        '
+                    >
+                        {{ title }}
+                    </p>
+                    <p class='text-xl text-white text-shadow'>
+                        {{ description }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

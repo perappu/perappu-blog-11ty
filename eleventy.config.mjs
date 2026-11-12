@@ -38,8 +38,13 @@ export default async function (eleventyConfig) {
             .sort((a, b) => b.data.date - a.data.date)
     })
 
+
     eleventyConfig.addFilter('postDate', (dateObj) => {
         return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED)
+    })
+    // https://mattmcadams.com/posts/2024/get-11ty-collection-item/
+    eleventyConfig.addFilter("findItem", (collection = [], slug = "") => {
+        return collection.find(item => item.url === slug);
     })
 
     eleventyConfig.addPlugin(tocPlugin, { ul: 'false' })
@@ -72,6 +77,7 @@ export default async function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ './assets/robots.txt': 'robots.txt' })
     eleventyConfig.addPassthroughCopy('./_src/content/img/**/**.*')
     eleventyConfig.addPassthroughCopy('./assets/img/**.*')
+    eleventyConfig.addPassthroughCopy('./assets/previews/**.*')
 
     eleventyConfig.addWatchTarget('/assets/tailwind.css')
     eleventyConfig.addWatchTarget('/content/**/*.*')

@@ -16,7 +16,9 @@
         />
         <meta
             property='og:image'
-            content='{{ ogImage or metadata.url + metadata.defaultOgImage }}'
+            content='
+            {% if page.url == "/" %}{{ metadata.url }}/assets/previews/index.png{% else %}
+            {{ metadata.url}}/assets/previews/{{ page.fileSlug }}.png{% endif %}'
         />
         <meta property='og:url' content='{{ metadata.url }}{{ page.url or page.permalink }}' />
         <meta property='og:type' content="{{ ogType or 'website' }}" />
