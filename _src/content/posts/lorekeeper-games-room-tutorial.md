@@ -40,7 +40,7 @@ You don't have to use these, but they are provided for convenience, as calling t
 
 If you are using Phaser, it's extremely simple to create a score submission block! Here is an example:
 
-```
+```js
 //add score submission text to the screen
 const submitScoreText = this.add.text(this.scale.width * 0.5, this.scale.height * 0.5, 'Submit Score', {
     fontFamily: 'Arial Black', fontSize: 12, color: '#ffffff',

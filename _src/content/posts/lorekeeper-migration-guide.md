@@ -122,7 +122,7 @@ Both Hetzner and DigitalOcean support cloud-config. On DigitalOcean, you will ne
 
 1. Open up Notepad and paste in this text.
 
-```
+```yaml
 #cloud-config
 ssh_pwauth: false
 
@@ -164,7 +164,7 @@ users:
 
 5. We need to set a password for your user account so that you can use sudo (superuser) commands. Enter this information, but replace with your password of choice:
 
-    ```
+    ```bash
     echo "USERNAME:PASSWORD" | sudo chpasswd
     ```
 
@@ -198,7 +198,7 @@ We are now going to run several commands to update various system packages.
 
 Copy the following commands into PuTTY, in order:
 
-```
+```bash
 sudo apt update
 sudo apt upgrade
 ```
@@ -232,7 +232,7 @@ First, we are going to **set up UFW** (or, Uncomplicated Firewall) to block all 
 
 2. Type in these two commands:
 
-```
+```bash
 sudo ufw allow 'Nginx Full'
 sudo ufw allow 'OpenSSH'
 ```
@@ -354,7 +354,7 @@ We are going to place PHPMyAdmin behind this thing called an HTTP gateway. This 
 
 7. Paste these contents:
 
-```
+```nginx
 server {
     listen       80;
     server_name  sql.YOURDOMAIN;
@@ -392,7 +392,7 @@ Now we're going to actually put the code on your server!
 
 Run all of these commands, replacing YOURDOMAIN with the URL of your site. You won't receive feedback for all of them -- that's OK, it means it worked! If prompted for a password, enter the password you set up for your account earlier. (also, don't replace the `$USER` with anything! Keep it the way it is!)
 
-```
+```bash
 sudo mkdir /var/www/YOURDOMAIN
 sudo mkdir /var/www/YOURDOMAIN/www
 sudo mkdir /var/www/YOURDOMAIN/www/public
@@ -405,13 +405,13 @@ git config --global --add safe.directory /var/www/YOURDOMAIN/site_hub.git
 
 Now, we'll type in this command, which will open up a text file.
 
-```
+```bash
 sudo nano /etc/nginx/sites-available/YOURDOMAIN
 ```
 
 Paste this into the text file, changing ONLY the YOURDOMAIN value:
 
-```
+```nginx
 server {
     server_name YOURDOMAIN www.YOURDOMAIN;
     root /var/www/YOURDOMAIN/www/public;
@@ -449,7 +449,7 @@ Enter `ctrl+x` and then `y` and `enter` to save and exit.
 
 Now run these commands. Again, it's OK if it gives you no feedback, it just means it worked!
 
-```
+```bash
 sudo rm /etc/nginx/sites-enabled/default
 sudo ln -s /etc/nginx/sites-available/YOURDOMAIN /etc/nginx/sites-enabled/
 sudo nginx -t # Test for config errors
